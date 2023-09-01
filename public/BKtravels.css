@@ -1,0 +1,699 @@
+body {
+    font-family: 'Wix Madefor Display', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .navbar-toggler {
+    border: 0 solid #ffff;
+}
+
+.navbar .navbar-toggler:focus,
+.navbar .navbar-toggler:active,
+.navbar .navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+
+}
+
+.navbar .offcanvas .offcanvas-header .btn-close:focus,
+.navbar .offcanvas .offcanvas-header .btn-close:active {
+    outline: none;
+    box-shadow: none;
+}
+.navbar .navlink .btn:focus,
+.navbar .navlink .btn:active{
+    outline:none;
+    box-shadow:none;
+}
+
+.navicon {
+    transform: rotate(180deg);
+}
+
+.collapse .navbar-nav .active a {
+    color: #FB8500;
+}
+
+.toggleHolder{
+    /* position: relative; */
+    /* left:50%; */
+    /* top:14.5rem; */
+    border:2px solid grey;
+    border-radius: 25px;
+    width:50px;
+    height: 10px;
+  }
+  .modeToggler{
+    border:2px solid grey;
+    text-align: center;
+    color: grey;
+    background-color: #ffff;
+    border-radius: 50px;
+    height:30px;
+    width:30px;
+    position:absolute;
+    left:-2px;
+    top: -12px;
+    cursor: pointer;
+    transition:.5s ease-in;
+  }
+  .dark{
+    background-color: #0000;
+    color:#ffff;
+    transition: .6s ease-in-out;
+  }
+
+.home {
+    font-family: 'Wix Madefor Display', sans-serif;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    text-align: center;
+}
+
+.contactlink {
+    border-radius: 25px;
+    border: 1px #FB8500 solid;
+    background-color: #FFFF;
+    color: #FB8500;
+    font-size: medium;
+    transition: .2s ease-in-out;
+}
+
+.contactlink1 {
+    border-radius: 25px;
+    border: 1px #FB8500 solid;
+    background-color: #FB8500;
+    color: #ffff;
+    font-size: medium;
+    transition: .2s ease-in-out;
+}
+
+.contactlink1:hover {
+    background-color: #ffff;
+    color: #FB8500;
+}
+
+.contactlink:hover {
+    background-color: #FB8500;
+    color: white;
+}
+
+.offcanvas-body>.navbar-nav>.active>.a {
+
+    color: #FB8500;
+
+}
+
+@media (max-width:768px) {
+    .hometext {
+        padding-top: 25%;
+    }
+}
+
+.fa-caret-right {
+    border: 2px #FFFF solid;
+    padding: 8px;
+    border-radius: 15%;
+}
+
+.fa-caret-right:hover {
+    color: #FB8500;
+    border-color: #FB8500;
+}
+
+.fa-caret-left {
+    border: 2px #FFFF solid;
+    padding: 8px;
+    border-radius: 15%;
+}
+
+.fa-caret-left:hover {
+    color: #FB8500;
+    border-color: #FB8500;
+}
+
+.logo {
+    margin-left: 80%;
+    position: relative;
+    animation-name: float;
+    animation-duration: 4s;
+    animation-delay: 4s;
+    animation-iteration-count: infinite;
+}
+
+.about {
+    font-family: 'Wix Madefor Display', sans-serif;
+    color: #FB8500;
+}
+
+
+.aboutsection {
+
+    font-size: large;
+    line-height: 2;
+}
+
+.aboutus {
+    font-size: larger;
+    line-height: 2;
+}
+
+.navblock {
+    position: absolute;
+    top: 87%;
+    border: 1px #cdcdcd solid;
+    margin-left: 15%;
+    width: 70%;
+    height: 9rem;
+    background-color: #FFFF;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 #cdcdcd;
+}
+
+.icon {
+    padding-left: 15%;
+}
+
+
+.service {
+    color: #FB8500;
+    font-family: 'Wix Madefor Display', sans-serif;
+}
+
+.servicewrap {
+    width: 70%;
+    height: 50%;
+}
+
+.elite {
+
+    font-family: 'Wix Madefor Display', sans-serif;
+    color: grey;
+    border: 1px #f4f4f6 solid;
+    transition: transform .7s;
+    background-color: #f4f4f6;
+    border-radius: 12px;
+    transition: transform .5s ease-in-out;
+}
+
+.Readmore {
+    color: grey;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Wix Madefor Display';
+    background: transparent;
+    border: none;
+}
+
+.Readmore:hover {
+    color: #FB8500;
+    text-decoration: none;
+}
+
+.h_line {
+    width: 90%;
+    border-bottom: 1px solid #cdcdcd;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.rating {
+
+    margin-top: auto;
+    color: goldenrod;
+}
+
+.col-center {
+    margin: 0 auto;
+    float: none !important;
+}
+
+.carousel {
+    padding: 0 45px;
+}
+
+.carousel .carousel-item {
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    min-height: 290px;
+}
+
+.carousel .img-box img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+}
+
+.carousel .testimonial {
+    padding: 30px 0 10px;
+}
+
+.carousel .overview {
+    font-family: inherit;
+}
+
+.carousel .overview b {
+    text-transform: uppercase;
+    color: #FB8500;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+    height: 40px;
+    margin-top: -10px;
+    top: 60%;
+    background: none;
+    z-index: 0;
+}
+
+.carousel-control-prev i,
+.carousel-control-next i {
+    font-size: 68px;
+    line-height: 42px;
+    position: absolute;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
+    z-index: 0;
+}
+
+.carousel-indicators {
+    top: 110%;
+
+}
+
+.carousel-indicators li,
+.carousel-indicators li.active {
+    width: 12px;
+    height: 12px;
+    margin: 1px 3px;
+    border-radius: 50%;
+    border: none;
+    z-index: 0;
+}
+
+.carousel-indicators li {
+    background: #999;
+    border-color: transparent;
+    box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+    z-index: 0;
+}
+
+.carousel-indicators li.active {
+    background: #555;
+    box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.2);
+    z-index: 0;
+}
+
+.contactform {
+    font-family: 'Wix Madefor Display', sans-serif;
+    border: 2px solid lightgray;
+    color: white;
+    height: 70%;
+    width: 25%;
+    background-color: #ffff;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left-color: transparent;
+}
+
+.contactnav {
+    font-family: 'Wix Madefor Display', sans-serif;
+    border: 2px solid #FB8500;
+    padding: 2%;
+    height: 33rem;
+    color: white;
+    width: 25%;
+    background-color: #FB8500;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    
+}
+
+@media (max-width:510px) {
+    .contactnav {
+        display: none;
+    }
+}
+
+@media (max-width:968px) {
+    .contactform {
+        border-left-color: #cdcbcd;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+    }
+}
+
+
+@media (max-width:460px) {
+    .carousel {
+        padding: 0 2px;
+    }
+}
+
+input {
+    width: 75%;
+    padding: 2%;
+    height: 25%;
+    display: block;
+    color: grey;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #cdcbcd;
+    background-color: #ffff;
+}
+
+input:focus {
+    border-bottom: 2px solid #FB8500;
+    outline: #FB8500;
+}
+
+.submit {
+    outline: none;
+    background-color: #FB8500;
+    color: white;
+    border: 2px #FB8500 solid;
+    height: 3rem;
+    width: 20%;
+    border-radius: 5px;
+}
+
+@media (max-width:510px) {
+    .submit {
+        width: 55%;
+        margin-left: 15%;
+
+    }
+}
+
+.cabbooking {
+    font-family: 'Wix Madefor Display', sans-serif;
+    border: 2px solid transparent;
+    color: white;
+    height: 25%;
+    width: 25%;
+    background-color: #ffff;
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left-color: transparent;
+}
+
+.booknow {
+    outline: none;
+    background-color: #FB8500;
+    color: white;
+    border: 2px #FB8500 solid;
+    height: 3rem;
+    width: 20%;
+    border-radius: 5px;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#booking {
+    overflow-x: hidden;
+    overflow-y: auto;
+    cursor: default;
+    position: absolute;
+    top: 15%;
+    right: 7%;
+    left: 7%;
+    bottom: 15%;
+    vertical-align: middle;
+    height: 80%;
+    border-radius: 20px;
+    background-color: #ffff;
+
+}
+
+#overlay1 {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#booking1 {
+    overflow-x: hidden;
+    overflow-y: auto;
+    cursor: default;
+    position: absolute;
+    top: 15%;
+    right: 7%;
+    left: 7%;
+    bottom: 15%;
+    vertical-align: middle;
+    height: 80%;
+    border-radius: 20px;
+    background-color: #ffff;
+
+}
+
+#overlay2 {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#booking2 {
+    overflow-x: hidden;
+    overflow-y: auto;
+    cursor: default;
+    position: absolute;
+    top: 15%;
+    right: 7%;
+    left: 7%;
+    bottom: 15%;
+    vertical-align: middle;
+    height: 80%;
+    border-radius: 20px;
+    background-color: #ffff;
+
+}
+
+@media (max-width:576px) {
+    .cabbooking {
+        margin-left: 9%;
+
+    }
+}
+
+/* tour */
+.explore {
+    font-family: 'Wix Madefor Display';
+    border: 2px #f4f4f6 solid;
+    background-color: #f4f4f6;
+    border-radius: 50px;
+    /* box-shadow: 0 0 10px  rgba(0,0,0,0.19); */
+
+    width: 50%;
+    margin-left: 25%;
+}
+
+input.empty {
+    font-family: 'Wix Madefor Display', FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: grey;
+}
+
+.swiper {
+    margin-top: 5%;
+    text-align: center;
+    width: 270px;
+    height: 270px;
+    border-radius: 25px;
+}
+
+.booktour {
+    border: 1px solid #FB8500;
+    border-radius: 8px;
+    width: 50%;
+    height: 90%;
+}
+
+.footer {
+    height: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    color: grey;
+}
+
+.footer a {
+    text-decoration: none;
+    color: grey;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    /* line-height: 2.8; */
+}
+
+.footer a:hover {
+    text-decoration: none;
+    color: #FB8500;
+}
+
+.slide1 {
+    border: solid 2px rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 250px;
+    height: 300px;
+    background-image: url('auroville.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slide2 {
+    border: solid 2px rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    width: 250px;
+    height: 300px;
+    background-image: url('auroville.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.slide3 {
+    border: solid 2px rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 250px;
+    height: 300px;
+    background-image: url('auroville.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cont {
+    font-size: small;
+    font-family: 'Wix Madefor Display';
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    border: 1px rgba(0, 0, 0, 0.4) solid;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border-radius: 25px;
+    text-align: center;
+}
+.imageslider{
+    overflow-x: hidden;
+}
+.spot {
+    height: 45vh;
+    width: 18%;
+    background-image: url('auroville.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 25px;
+}
+
+.loginPage {
+    color: grey;
+    font-family: 'Wix Madefor Display', sans-serif;
+  }
+  
+  .logininput {
+    border: 2px solid grey;
+    width: 60%;
+    height: 3rem;
+    padding-left: 20%;
+    border-radius: 8px;
+    margin-left: 20%;
+  }
+  
+  .logininput:focus {
+    outline: #FB8500;
+    border: 2px solid #FB8500;
+  }
+  
+  .loginbtn {
+    border: none;
+    background-color: none;
+    border: 1px solid #FB8500;
+    background-color: #FB8500;
+    color: #ffff;
+    width: 60%;
+    height: 3rem;
+    border-radius: 8px;
+    margin-left: 20%;
+  }
+  
+  @media(max-width:576px) {
+    .logininput  {
+      margin-left: 10%;
+      width: 80%;
+    }
+  }
+  @media(max-width:576px) {
+    .loginbtn  {
+      margin-left: 10%;
+      width: 80%;
+    }
+  }
+  .loginbtn:hover{
+    background-color: #fc9c2e;
+    border-color: #fc9c2e;
+  }
+  a.signUpLink{
+    text-decoration: none;
+    color: grey;
+  }
+  a.signUpLink:hover {
+    text-decoration: none;
+    color:#FB8500;
+  }
+  #message{
+    transition: ease-in;
+  }
+  .profile{
+    margin-left: 40%;
+    margin-top: 5%;
+  }
+  @media (max-width:400px) {
+    .profile{
+        margin-left: 36%;
+    }
+  }
