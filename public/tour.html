@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BK travels</title>
+  <link rel="stylesheet" href="BKtravels.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#ff9100" />
+  <!-- Fav icon -->
+  <link rel="icon" type="x--icon" href="favicon_prev_ui.png" sizes="74x74">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/4dcf6ccd52.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css"
+    integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css"
+    integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous" />
+  <!-- Slider -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <!-- Swipper JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+
+  <!-- Firebase -->
+
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <!-- Font-style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <!-- Bootstrap cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Wix Madefor Display';
+      background-color: #FFFF;
+      overflow-x: hidden;
+    }
+  </style>
+  <!-- JS -->
+  <script defer src="index.js"></script>
+  <script defer src="Login.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Eczar:wght@800&family=Wix+Madefor+Display&display=swap');
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Eczar:wght@800&family=Poppins:wght@700&family=Wix+Madefor+Display&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Nav bar -->
+  <nav class="container-fluid   navbar  navbar-light navbar-nav-scroll fixed-top bg-light   navbar-expand-lg "
+    data-spy="affix" data-offset-top="0" style="font-family:'Wix Madefor Display',sans-serif;">
+    <div class="container  ">
+      <a href="index.html" class="navbar-brand "><img src="navbarlogo_prev_ui.png" alt="logo" width="170px"></a>
+      <button class="navbar-toggler navbar-danger " type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class=" navbar-toggler "><svg class="navicon" xmlns="http://www.w3.org/2000/svg" width="35px"
+            height="35px" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M2 5.99519C2 5.44556 2.44556 5 2.99519 5H11.0048C11.5544 5 12 5.44556 12 5.99519C12 6.54482 11.5544 6.99039 11.0048 6.99039H2.99519C2.44556 6.99039 2 6.54482 2 5.99519Z"
+              fill="#808080" />
+            <path
+              d="M2 11.9998C2 11.4501 2.44556 11.0046 2.99519 11.0046H21.0048C21.5544 11.0046 22 11.4501 22 11.9998C22 12.5494 21.5544 12.9949 21.0048 12.9949H2.99519C2.44556 12.9949 2 12.5494 2 11.9998Z"
+              fill="#808080" />
+            <path
+              d="M2.99519 17.0096C2.44556 17.0096 2 17.4552 2 18.0048C2 18.5544 2.44556 19 2.99519 19H15.0048C15.5544 19 16 18.5544 16 18.0048C16 17.4552 15.5544 17.0096 15.0048 17.0096H2.99519Z"
+              fill="#808080" />
+          </svg></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav navlink ms-auto mt-2 mt-md-0 ">
+          <li class="nav-item text-center"><a class="nav-link   ps-4 pe-4 " href="index.html">Home</a></li>
+          <li class="nav-item text-center "><a class="nav-link  ps-4 pe-4 " href="index.html#section0">Who we are?</a>
+          </li>
+          <li class="nav-item text-center"><a class="nav-link  ps-4 pe-4" href="index.html#section1">What we do?</a>
+          </li>
+          <li class="nav-item text-center"><a class="nav-link active ps-4 pe-4" href="tour.html">Tour</a></li>
+          <li class="nav-item text-center "><a class="nav-link  ps-4 pe-4 " href="fleet.html">Our Fleet</a></li>
+          <li class="nav-item text-center "><a class="nav-link  ps-4 pe-4" href="index.html#section3">Testimonial</a>
+          </li>
+          <li class="nav-item text-center "><button class="nav-link mx-auto contactlink p-2 " type="button"
+              onclick="location.href='index.html#section4'"
+              style="border-radius:5px; border:1px #FB8500 solid;background-color:#FB8500;color:#FFFF;">Contact
+              us</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="errorBox1" class="alert "
+    style=" border:2px solid #efbeb7;
+  background-color: #efbeb7;
+  font-family: 'Poppins';
+  font-weight: 600;
+  height:4rem;
+  width:19rem;
+  padding-top: 1rem;
+  border-radius: 8px;
+  color:#a24025;position:fixed;top:13%;z-index: 2;float: right; right: 8%;display: none;transition: ease-in-out 6s;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);">
+    <img class="me-2" src="warning.png" height="20" width="20"> Please complete form !
+  </div>
+
+  <div id="msgBox1" class="alert "
+    style=" border:2px solid #b7efc5;
+background-color: #b7efc5;
+font-family: 'Poppins';
+font-weight: 600;
+height:5rem;
+width:19rem;
+padding-top: 1rem;
+border-radius: 8px;
+color:#25a244;position:fixed;top:13%;z-index:  2;;float: right;right:8%;display: none; box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);"><img class="me-2"
+      src="check.png" height="20" width="20"> Your order places successfully!</div>
+
+
+  <!-- Home -->
+  <div class="about container text-start mt-5  " id="section0">
+    <div class="row">
+
+      <div class="col-lg-6">
+        <div class="aboutsection text-start">
+          <img class="mt-5 " style="position: absolute;right: 6%; z-index: -1;" src="tri2.png" height="60" width="60">
+          <div class=" mt-lg-5 ps-5 pt-5  pe-5 ">
+            <h2 class="mb-4  mt-5" style="color:#FB8500;font-family: 'Poppins',sans-serif;line-height: 1.4;"><b>Discover
+                the best places to to enjoy your vacations!</b></h2>
+            <!-- <h6 class="mt-1 ms-2 mx-auto" style="font-family:'Wix Madefor Display';color:grey;">Get into the rue de la France inside India</h6> -->
+          </div>
+          <img class="ml-auto" style=" z-index: -1;" src="tri1.png" height="60" width="60">
+        </div>
+      </div>
+      <div class="col-lg-6  text-center">
+        <img class="aboutimg mt-5 img-fluid " src="tourpic.jpg" height="85%" width="65%">
+      </div>
+    </div>
+  </div>
+  <!-- Explore -->
+  <div class="container-fluid pt-5 ">
+    <div class="explore mx-auto  mt-5 d-none d-lg-block">
+      <div class="row">
+        <div class="col-sm mt-2 ms-5">
+          <span> <i class="fa-solid fa-location-dot me-2" style="color:#FB8500;"></i>
+            <label style="color:#FB8500; font-weight: bold;">Location</label>
+            <input type="text" class=" empty" id="getLocation" placeholder="Location    &#xf041;"
+              style="color: grey; background-color: #f4f4f6; border: none; width: 100%; height: 50%; ">
+        </div>
+
+        <div class="col-sm mt-2 ms-3">
+          <i class="fa-solid fa-calendar-days me-2" style="color:#FB8500;"></i>
+          <label style="color:#FB8500; font-weight: bold;">Date</label>
+          <input type="text" class=" empty" id="getdate" placeholder="Date    &#xf073;"
+            style="color: grey; background-color: #f4f4f6; border: none; width: 90%; height: 50%; "
+            onfocus="(this.type='date',this.style.width='23%')" onblur="(this.type='text',this.style.width='70%')">
+
+        </div>
+
+        <div class="col-sm mt-2 ms-5">
+          <i class="fa-solid fa-user-group me-2" style="color:#FB8500;"></i>
+          <label style="color:#FB8500; font-weight: bold;">Guest</label>
+          <input class="ps-4  empty" type="text" id="guest" placeholder="0 &#xf500;"
+            style=" height: 50%; width:80%; border:none;color:grey; background-color: #f4f4f6;" required />
+        </div>
+
+        <div class="col-sm">
+          <button class="explorebtn p-3  mx-auto"
+            style="border-radius:50px; float: right;  border:1px #FB8500 solid;background-color:#FB8500;color:#FFFF; height: 100%; width: 100%;"
+            onclick="explore()">
+            Explore Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Places-->
+  <div class="places container text-center service mt-5  mb-5">
+    <div class="places pt-5">
+      <div class="row">
+        <div class="col-md-6 p-4 aboutsection text-start">
+          <h4 class="mt-2" style="font-family: 'Poppins',sans-serif; color:#FB8500"><b>Reasons to visit!</b></h4>
+          <p class=" mt-5" style="color: gray;">Pondicherry is a former French colony, and its architecture reflects its
+            unique blend of Indian and French influences. The city is home to many historical sites, including the
+            Aurobindo Ashram, the Matrimandir, and the French Quarter.Whether you are interested in history, culture, or
+            relaxation, Pondicherry has something to offer everyone.</p>
+        </div>
+        <div class="col-md-6 ">
+          <div class="swiper mySwiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"
+                style="border-radius: 50px; width: 150px; height: 250px; background-image: url('white.jpg');  background-position:center;background-size: cover;">
+                <h6
+                  style="font-family: 'Poppins'; color: #ffff;margin-top:75%; font-weight: 900; float: left; margin-left: 15%; font-size: larger;">
+                  <b>Architecture</b>
+                </h6>
+              </div>
+              <div class="swiper-slide" style="border-radius: 50px; width: 150px;height:250px; background-image: url('auroville.jpg');  background-position:center;
+                      background-size: cover;">
+                <h6
+                  style="font-family: 'Poppins'; color:#ffff;margin-top:75%; font-weight: 900; float: left; margin-left: 15%; font-size: larger;">
+                  Culture</h6>
+              </div>
+              <div class="swiper-slide"
+                style="border-radius: 50px; width: 150px; height: 250px; background-image: url('food.jpg');  background-position:center;background-size: cover;">
+                <h6
+                  style="font-family: 'Poppins'; color: #ffff;margin-top:75%; font-weight: 900; float: left; margin-left: 15%; font-size: larger ;">
+                  Cuisine</h6>
+              </div>
+              <div class="swiper-slide"
+                style="border-radius: 50px; width: 150px; height: 250px; background-image: url('beach.webp');  background-position:center;background-size: cover;">
+                <h6
+                  style="font-family: 'Poppins'; color: #ffff;margin-top:75%; font-weight: 900; float: left; margin-left: 15%; font-size: larger ;">
+                  Beach</h6>
+              </div>
+              <div class="swiper-slide"
+                style="border-radius: 50px; width: 150px; height: 250px; background-image: url('lighthouse.jpg');  background-position:center;background-size: cover;">
+                <h6
+                  style="font-family: 'Poppins'; color: #ffff;margin-top:75%; font-weight: 900; float: left; margin-left: 15%; font-size: larger ;">
+                  Lighthouse</h6>
+              </div>
+              <div class="swiper-slide"
+                style="border-radius: 50px; width: 150px; height:250px; background-image: url('chruch.jpg');  background-position:center;background-size: cover;">
+                <h6
+                  style="font-family: 'Poppins'; color: #ffff;margin-top:75%; font-weight: 900; float: left; margin-left: 15%; font-size: larger ; ">
+                  Heritage</h6>
+              </div>
+              <div class="swiper-slide"
+                style="border-radius: 50px; width: 150px; height:250px; background-image: url('temple.jpg');  background-position:center;background-size: cover;">
+                <h6
+                  style="font-family: 'Poppins'; color: #ffff;margin-top:75%; font-weight: 900; float: left; margin-left: 15%; font-size: larger ;">
+                  Religious</h6>
+              </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+            <script>
+              const swiper = new Swiper('.mySwiper', {
+                effect: 'cards', pointer: true,
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Booking -->
+  <div class="container service mt-5 " id="tourbooking">
+    <h5 class="text-center m-2 pt-5 mb-3" style="color:#FB8500; font-family: 'Poppins',sans-serif;"><b>Share your tour
+        plan with us!</b></h5>
+    <p class=" text-center mt-4 mb-5" style="color:grey; font-size: larger;">Give us a chance to make it happen <i
+        class="fa-solid fa-leaf ms-2"></i></p>
+    <div class="row">
+      <div class="col-lg-6 mx-auto mt-3 ">
+        <img class=" ms-5 mt-5 mx-auto img-fluid " src="cycle.jpg" height="60%" width="70%">
+      </div>
+      <div class="col-lg-6 text-start mt-5 pt-2  cabbooking">
+        <form class="mt-3" action="https://formspree.io/f/xzbqqjej" method="POST">
+          <div class="row ">
+            <div class="col-lg-6 ps-3 ">
+              <label style="color: grey;">Name</label>
+              <input class=" mb-3 pb-4 pt-4" type="text" id="tname" placeholder="" name="name" required>
+            </div>
+
+            <div class="col-lg-6">
+              <label style="color: grey;">Mobile Number</label>
+              <input id="tnum" class="mb-3 pb-4 pt-4" type="text" placeholder="" name="number" required>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-lg-6 ">
+              <label style="color: grey;">Location</label>
+              <input id="tloc" class=" mb-3 pb-4 pt-4" type="text" name="Location" required>
+            </div>
+            <div class="col-lg-6">
+              <label style="color:grey;">Start Date</label>
+              <input type="text" class="empty mb-3 pb-4 pt-4" id="newdate" placeholder="Date    &#xf073;"
+                onfocus="(this.type='date')" onblur="(this.type='text')" name="data">
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-lg-6 ">
+              <select id="tpackage" class=" mb-3 mt-3 pb-5 " name="Package"
+                style="color: grey; background-color: #ffff; border:none; border-radius: none; border-bottom:1px solid grey; font-family: 'Wix Madefor Display'; width: 75%;">
+                <option selected style="font-family: 'Wix Madefor Display';">Tour Packages</option>
+                <option id="option" value="1">Silver</option>
+                <option value="2">Elite</option>
+                <option value="3">Premium</option>
+              </select>
+            </div>
+            <div class="col-lg-6">
+              <select id="ttype" class=" mb-3 mt-3 pb-5 " name="Type"
+                style="color: grey; background-color: #ffff; border:none; border-radius: none; border-bottom:1px solid grey; font-family: 'Wix Madefor Display'; width: 75%;">
+                <option selected style="font-family: 'Wix Madefor Display';">Plan Type</option>
+                <option value="1">Business</option>
+                <option value="2">School/College</option>
+                <option value="3">Family vacation</option>
+                <option value="4">Honey moon</option>
+                <option value="5">Casual vacation</option>
+              </select>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-lg-6 ">
+              <label class="mt-4" style="color: grey;">No of Days</label>
+              <input id="tdays" class=" mb-3 pb-4 pt-4" type="text" placeholder="" name="days" required>
+            </div>
+            <div class="col-lg-6">
+              <label class="mt-4" style="color:grey;">No of Guest</label>
+              <input id="tcount" class="mb-3 pb-4 pt-4" id="guestcount" type="text" placeholder="" name="guest"
+                required>
+            </div>
+          </div>
+
+          <button class="tourbook mt-2 me-5 mb-5 " style="float:left;" type="button" onclick="saveTour()">Book
+            now</button>
+          <style>
+            .tourbook {
+              outline: none;
+              background-color: #FFFF;
+              color: #FB8500;
+              border: 1px #FB8500 solid;
+              height: 3rem;
+              width: 20%;
+              border-radius: 5px;
+              transition: .2s ease-in-out;
+            }
+
+            .tourbook:hover {
+              outline: none;
+              background-color: #FB8500;
+              color: white;
+              border: 2px #FB8500 solid;
+            }
+
+            @media (max-width:510px) {
+              .tourbook {
+                width: 30%;
+              }
+            }
+
+            @media (max-width:576px) {
+              .cabbooking {
+                margin-left: 9%;
+              }
+            }
+          </style>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="h_line"></div>
+  <!-- Footer -->
+  <footer class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mb-3 p-3 ">
+          <a href="index.html"><img class=" mb-3" src="favicon_prev_ui.png" onclick="index.html" height="70"
+              width="70"></a><br>
+          <a style="text-decoration: none; color:grey;line-height: 2.8; " class=""
+            href="mailto:BKtravels01@gmail.com">BKtravels01@gmail.com</a><br>
+          <p style="text-decoration: none; color:grey; ">+91 7708994177</p>
+        </div>
+        <div class="col-lg-2 mb-3 p-3">
+          <h6 class="mt-3" style="color: grey;">Company</h6>
+          <a class="" style="text-decoration: none;color:grey; line-height: 2.8;" href="index.html#section0">Who we
+            are?</a><br>
+          <a style="text-decoration: none;color:grey;line-height: 2.8; " href="index.html#section1">What we do?</a><br>
+          <a style="text-decoration: none;color:grey; line-height: 2.8;" href="index.html#section3">Testimonial</a>
+        </div>
+        <div class="col-lg-2 mb-3 p-3">
+          <h6 class="mt-3" style="text-decoration: none;color:grey; ">Service</h6>
+          <a style="text-decoration: none; color:grey;line-height: 2.8; " class="" href="tour.html">Tour</a><br>
+          <a style="text-decoration: none; color:grey;line-height: 2.8; " href="fleet.html">Our Fleet</a><br>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="h_line" style="margin-top: 0%;"></div>
+  <div class="text-start container mt-4 mb-4">
+    <p style="color:grey;font-family: 'Wix Madefor Display'; font-size: medium; ">© 2023 <a href="index.html"
+        style="color:#FB8500;text-decoration: none;"> BK Travels.</a> All Rights Reserved.</p>
+  </div>
+  <!-- SwipperJS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- Bootstrap cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+    integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

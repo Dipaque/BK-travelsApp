@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BK travels</title>
+  <link rel="stylesheet" href="BKtravels.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#ff9100" />
+  <!-- Fav icon -->
+  <link rel="icon" type="x--icon" href="favicon_prev_ui.png" sizes="74x74">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/4dcf6ccd52.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css"
+    integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css"
+    integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous" />
+  <!-- Slider -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <!-- Font-style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Eczar:wght@800&family=Jost&family=Poppins:wght@700&family=Wix+Madefor+Display&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Eczar:wght@800&family=Jost&family=Poppins:wght@700&family=Wix+Madefor+Display&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap cdn -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Wix Madefor Display';
+    }
+  </style>
+
+  <!-- Firebase -->
+
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <!-- JS -->
+  <script src="index.js"></script>
+  <script defer src="firebase.js"></script>
+  <script src="../app.js"></script>
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Eczar:wght@800&family=Wix+Madefor+Display&display=swap');
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Eczar:wght@800&family=Poppins:wght@700&family=Wix+Madefor+Display&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Nav bar -->
+  <nav id="navbar"
+    class="container-fluid   navbar  navbar-light navbar-nav-scroll fixed-top bg-light   navbar-expand-lg "
+    data-spy="affix" data-offset-top="0" style="font-family:'Wix Madefor Display',sans-serif;">
+    <div class="container  ">
+      <a href="index.html" class="navbar-brand "><img src="navbarlogo_prev_ui.png" alt="logo" width="170px"></a>
+      <button id="navButton" class="navbar-toggler navbar-danger " type="button" data-bs-toggle="collapse"
+        data-bs-target="#mynavbar" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class=" navbar-toggler"><svg class="navicon" xmlns="http://www.w3.org/2000/svg" width="35px" height="35px"
+            viewBox="0 0 24 24" fill="none">
+            <path
+              d="M2 5.99519C2 5.44556 2.44556 5 2.99519 5H11.0048C11.5544 5 12 5.44556 12 5.99519C12 6.54482 11.5544 6.99039 11.0048 6.99039H2.99519C2.44556 6.99039 2 6.54482 2 5.99519Z"
+              fill="#808080" />
+            <path
+              d="M2 11.9998C2 11.4501 2.44556 11.0046 2.99519 11.0046H21.0048C21.5544 11.0046 22 11.4501 22 11.9998C22 12.5494 21.5544 12.9949 21.0048 12.9949H2.99519C2.44556 12.9949 2 12.5494 2 11.9998Z"
+              fill="#808080" />
+            <path
+              d="M2.99519 17.0096C2.44556 17.0096 2 17.4552 2 18.0048C2 18.5544 2.44556 19 2.99519 19H15.0048C15.5544 19 16 18.5544 16 18.0048C16 17.4552 15.5544 17.0096 15.0048 17.0096H2.99519Z"
+              fill="#808080" />
+          </svg></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav navlink ms-auto mt-2 mt-md-0 ">
+          <li class="nav-item text-center"><a class="nav-link  active ps-4 pe-4 " href="index.html">Home</a></li>
+          <li class="nav-item text-center "><a class="nav-link  ps-4 pe-4 " href="#section0">Who we are?</a></li>
+          <li class="nav-item text-center"><a class="nav-link  ps-4 pe-4" href="#section1">What we do?</a> </li>
+          <li class="nav-item text-center "><a class="nav-link  ps-4 pe-4 " href="fleet.html">Our Fleet</a></li>
+          <li class="nav-item text-center "><a class="nav-link  ps-4 pe-4" href="#section3">Testimonial</a></li>
+          <li class="nav-item text-center "><button class="nav-link mx-auto contactlink p-2" type="button"
+              onclick="location.href='#section4'"
+              style="border-radius:5px; border:1px #FB8500 solid;background-color:#FB8500;color:#FFFF;">Contact
+              us</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- message box -->
+  <div id="errorBox" class="alert "
+    style=" border:2px solid #efbeb7;
+  background-color: #efbeb7;
+  font-family: 'Poppins';
+              font-weight: 600;
+  height:4rem;
+  width:19rem;
+  padding-top: 1rem;
+  border-radius: 8px;
+  color:#a24025;position:fixed;top:10%;z-index: 2;float: right; right: 8%;display: none;transition: ease-in-out 6s;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);">
+    <img class="me-2" src="warning.png" height="20" width="20"> Please complete form !
+  </div>
+
+  <div id="msgBox" class="alert "
+    style=" border:2px solid #b7efc5;
+background-color: #b7efc5;
+font-family: 'Poppins';
+              font-weight: 600;
+height:4rem;
+width:19rem;
+padding-top: 1rem;
+border-radius: 8px;
+color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: none; box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);"><img class="me-2"
+      src="check.png" height="20" width="20"> Thanks for contacting us!</div>
+  <!-- Home -->
+  <div class="home  "
+    style="background-image: url(summer-2880261_1280.jpg);background-position: center;background-size: cover;background-repeat: no-repeat;height: 46rem;">
+    <div class="hometext container-fluid" style="background-color:black;opacity:70%;height: 46rem; ">
+      <h4 class="text-center"
+        style="font-family:Poppins;font-weight: bolder;padding-top:20%;font-size: 37px;background-color:black;color:#FFFF;">
+        <b>Hang on with us on your holidays!</b>
+      </h4>
+      <h5 class="mt-5 mx-auto" style="font-family:Poppins;background-color:black;color:#FFFF;"><b>"Set Sail for New
+          Horizons"</b></h5>
+
+    </div>
+  </div>
+  <!-- About -->
+  <div class="about container text-start mt-5 " id="section0">
+    <div class="row">
+      <div class="col-lg-6 my-auto text-center">
+        <img class="img-fluid" src="about_prev_ui.png" height="80%" width="70%">
+      </div>
+      <div class="col-lg-6">
+        <div class="aboutsection text-start">
+          <div class=" mt-5  ps-5 pe-5 pt-5">
+            <h6 class="mb-5" style="color:grey;font-family: 'Poppins',sans-serif;"><b>ABOUT</b></h6>
+            <h4 style="font-weight: bolder;font-family: 'Poppins';"><b>Who we are?</b></h4><br>
+            <p style="color:grey">Your gateway to extrardinary adventures and unforgettable experiences around the
+              globe. We are passionate about travel and dedicated to crafting remarkable journeys that inspire and
+              enrich your life.
+              At our agency, we believe that travel has the power to transform, educate, and create lifelong memories.
+              Our team of experienced travel enthusiasts is here to guide you every step of the way.</p>
+          </div>
+          <button class="viewtour nav-link ms-5  mt-3 pt-1 pb-1 " type="button" onclick="location.href='tour.html'"
+            style="border-radius:5px; border:1px #FB8500 solid;color:#FB8500;padding-left: 2%;padding-right: 2%;"> <span
+              class="viewbtn">View All Tour</span>
+            <i class="fa-solid fa-chevron-right ps-1 pe-2 " style="color: #FB8500;"></i>
+            <style>
+              @keyframes move-right {
+                0% {
+                  transform: translateX(0);
+                }
+
+                80% {
+                  transform: translateX(35%);
+                }
+              }
+
+              button.viewtour:hover .fa-chevron-right {
+                animation-name: move-right;
+                animation-duration: 1s;
+              }
+            </style>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Services -->
+  <div class=" service   container mt-5 justify-content-md-center mt-5 pb-5" id="section1">
+    <div class="mt-5 ps-4  pe-4 pt-5">
+      <h6 class="mb-5 mt-5 text-center" style="color:grey;font-family: 'Poppins',sans-serif;">
+        <b>SERVICE</b>
+      </h6>
+      <h4 class="text-center" style="font-family:Poppins;">
+        <b>What we do?</b>
+      </h4>
+
+      <div class=" mt-5 text-center">
+        <div class="row justify-content-md-center">
+
+          <div id="elite" class="col-lg m-lg-4   mt-3 mb-5 text-start p-3 elite  ps-3">
+            <img src="accomodation_prev_ui.png" class="mb-5 mt-4 ms-3" alt="camera" height="50" width="50">
+            <h5 class="mb-4 ms-3">Accomodation</h5>
+            <p class="p-3" style="line-height: 2;">We offer the best accomodation for our guest. Enjoy your cool
+              holidays with good food and luxurious rooms.</p>
+            <button class="Readmore ms-3" type="submit" onclick="on2()">Book now <i
+                class="fa-solid fa-arrow-right ps-1"></i></button>
+          </div>
+          <!-- Accomodation -->
+          <div id="overlay2">
+            <div id="booking2">
+              <div class="container   ">
+                <i class="fa-solid fa-xmark" style="color:gray; float: right; font-size: 22px;" onclick="off2()"></i>
+                <style>
+                  i.fa-xmark:hover {
+                    cursor: pointer;
+                    color: rgb(247, 97, 97);
+                  }
+                </style>
+                <div id="errorAlert1" class="alert "
+                  style=" border:2px solid #efbeb7;
+              background-color: #efbeb7;font-family: 'Poppins';
+              font-weight: 600;
+              height:5rem;
+              width:19rem;
+              padding-top: 1rem;
+              border-radius: 8px;
+              color:#a24025;position:fixed;top:10%;z-index: 1;float: right; right: 8%;display: none;transition: ease-in-out 6s;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);">
+                  <img class="me-2" src="warning.png" height="20" width="20"> Some error occured or form is incomplete.
+                </div>
+                <div id="bookingAlert1" class="alert "
+                  style=" border:2px solid #b7efc5;
+                font-family: 'Poppins';
+              font-weight: 600;
+            background-color: #b7efc5;
+            height:5rem;
+            width:19rem;
+            padding-top: 1rem;
+            border-radius: 8px;
+            color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: none; box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);"><img
+                    class="me-2" src="check.png" height="20" width="20"> Your booking placed successfully!</div>
+                <h5 class="text-center m-2 pt-5 mb-3" style="color:#FB8500; font-family: 'Poppins',sans-serif;"><b>The
+                    perfect place to relax and recharge!</b></h5>
+                <div class="row">
+                  <div class="col-lg-6 mx-auto mt-5">
+                    <img class="img-fluid  mx-auto " src="2324409_prev_ui.png" height="80%" width="80%">
+                  </div>
+                  <div id="roomBooking" class="col-lg-6 text-start mt-5 pt-2  cabbooking">
+                    <form class="mt-3">
+                      <div class="row  ps-3 ">
+                        <div class="col-lg-6 ps-3 ">
+                          <label style="color: grey;">Name</label>
+                          <input id="aname" class=" mb-3 pb-4 pt-2" type="text" placeholder="" required>
+                        </div>
+
+                        <div class="col-lg-6">
+                          <label style="color: grey;">Email</label>
+                          <input id="anum" class="mb-3 pb-4 pt-2" type="email" placeholder="" required>
+                        </div>
+                      </div>
+                      <div class="row ps-3">
+                        <div class="col-lg-6 ">
+                          <label style="color: grey;">Room Count</label>
+                          <input id="atype" class=" mb-3 pb-4 pt-2" type="text" placeholder="" required>
+                        </div>
+                        <div class="col-lg-6">
+                          <label style="color:grey;">AC/Non AC</label>
+                          <input id="acac" class="mb-3 pb-4 pt-2" type="text" placeholder="" required>
+                        </div>
+                      </div>
+                      <div class="row ps-3 ">
+                        <div class="col-lg-6 ">
+                          <label style="color: grey;">Guest</label>
+                          <input id="aguest" class=" mb-3 pb-4 pt-2" type="text" placeholder="" required>
+                        </div>
+                        <div class="col-lg-6">
+                          <label style="color:grey;">Location</label>
+                          <input id="aloc" class="mb-1 pb-4 pt-2" type="text" placeholder="" required>
+                        </div>
+                      </div>
+                      <button id="" class="booknow mt-2 ms-3 mb-3 me-5 " style="float:left; " type="submit"
+                        onclick="save()">Book now</button>
+                      <style>
+                        .booknow {
+                          outline: none;
+                          background-color: #FB8500;
+                          color: white;
+                          border: 2px #FB8500 solid;
+                          height: 3rem;
+                          width: 20%;
+                          border-radius: 5px;
+                        }
+
+                        @media (max-width:510px) {
+                          .booknow {
+                            width: 50%;
+                          }
+                        }
+
+                        @media (max-width:576px) {
+                          .cabbooking {
+                            margin-left: 9%;
+                          }
+                        }
+                      </style>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="elite1" class="col-lg m-lg-4 mt-3 mb-5 text-start p-3  elite ps-3">
+            <img src="car_prev_ui.png" class="mb-5 mt-4 ms-3" alt="camera" height="50" width="60">
+            <h5 class="mb-4 ms-3">Vehicle Service</h5>
+            <p class="p-3" style="line-height: 2;">We provide cars for rent arround Pondicherry. The best car service
+              for you on time everytime. </p>
+
+            <button class="Readmore ms-3" id="carbook" type="submit" onclick="on()">Book now <i
+                class="fa-solid fa-arrow-right ps-1"></i>
+            </button>
+          </div>
+          <!-- Car booking -->
+          <div id="overlay">
+            <div id="booking">
+              <div class="container   ">
+                <i class="fa-solid fa-xmark" style="color:gray; float: right; font-size: 22px;" onclick="off()"></i>
+                <style>
+                  i.fa-xmark:hover {
+                    cursor: pointer;
+                    color: rgb(247, 97, 97);
+                  }
+                </style>
+                <div id="errorAlert" class="alert "
+                  style=" border:2px solid #efbeb7;
+              background-color: #efbeb7;
+              font-family: 'Poppins';
+              font-weight: 600;
+              height:5rem;
+              width:19rem;
+              padding-top: 1rem;
+              border-radius: 8px;
+              color:#a24025;position:fixed;top:10%;z-index: 1;float: right; right: 8%;display: none;transition: ease-in-out 6s;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);">
+                  <img class="me-2" src="warning.png" height="20" width="20"> Some error occured or form is incomplete.
+                </div>
+                <div id="bookingAlert" class="alert "
+                  style=" border:2px solid #b7efc5;
+            background-color: #b7efc5;
+            font-family: 'Poppins';
+              font-weight: 600;
+            height:5rem;
+            width:19rem;
+            padding-top: 1rem;
+            border-radius: 8px;
+            color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: none; box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);"><img
+                    class="me-2" src="check.png" height="20" width="20"> Your booking placed successfully!</div>
+                <h5 class="text-center m-2 pt-5 mb-3" style="color:#FB8500; font-family: 'Poppins',sans-serif;"><b>Book
+                    your cab online Anywhere Anytime!</b></h5>
+                <div class="row">
+                  <div class="col-lg-6 mx-auto ">
+                    <img id="cabBookingImg" class="img-fluid mx-auto mt-5 " src="3682361.jpg" height="80%" width="60%">
+                  </div>
+                  <div class="col-lg-6 text-start mt-5 pt-2  cabbooking">
+                    <form id="carBookingForm" class="mt-3">
+                      <div class="row  ps-3 ">
+                        <div class="col-lg-6 ps-3 ">
+                          <label style="color: grey;">Name</label>
+                          <input id="cabname" class=" mb-3 pb-4 pt-2" type="text" id="name" placeholder="" name="name"
+                            required>
+                        </div>
+
+                        <div class="col-lg-6">
+                          <label style="color: grey;">Email</label>
+                          <input id="cabnum" class="mb-3 pb-4 pt-2" type="email" placeholder="" name="number" required>
+                        </div>
+                      </div>
+                      <div class="row ps-3">
+                        <div class="col-lg-6 ">
+                          <label style="color: grey;">Departure</label>
+                          <input id="cabdep" class=" mb-3 pb-4 pt-2" type="text" placeholder="" name="departure"
+                            required>
+                        </div>
+                        <div class="col-lg-6">
+                          <label style="color:grey;">Destination</label>
+                          <input id="cabdes" class="mb-3 pb-4 pt-2" type="text" placeholder="" name="destination"
+                            required>
+                        </div>
+                      </div>
+                      <div class="row ps-3 ">
+                        <div class="col-lg-6 ">
+                          <select id="cabchoice" class=" mb-3  pb-5  "
+                            style="color: grey; background-color: #ffff; border:none; border-radius: none; border-bottom:1px solid grey; font-family: 'Wix Madefor Display'; width: 75%;">
+                            <option selected style="font-family: 'Wix Madefor Display';" name="vehicle">Car</option>
+                            <option id="option" value="1">BMW</option>
+                            <option value="2">Benz</option>
+                            <option value="3">xuv500</option>
+                            <option value="4">Punch</option>
+                            <option value="5">Kia</option>
+                            <option value="6">Ford Ecosport</option>
+                            <option value="7">Vespa</option>
+                            <option value="8">Fascino</option>
+                            <option value="9">Z-Ray</option>
+                            <option value="10">Activa</option>
+                            <option value="11">Pep</option>
+                          </select>
+                        </div>
+                        <div class="col-lg-6">
+                          <label style="color:grey;">Time</label>
+                          <input id="cabtime" class="mb-1 pb-4 pt-2" type="time" placeholder="" name="time" required>
+                        </div>
+                      </div>
+                      <button id="cabButton" class="booknow mt-2 ms-3 mb-3 me-5 " style="float:left; " type="submit"
+                        onclick="saveCab();">Book now</button>
+                      <style>
+                        .booknow {
+                          outline: none;
+                          background-color: #FB8500;
+                          color: white;
+                          border: 2px #FB8500 solid;
+                          height: 3rem;
+                          width: 20%;
+                          border-radius: 5px;
+                        }
+
+                        @media (max-width:510px) {
+                          .booknow {
+                            width: 50%;
+
+
+                          }
+                        }
+
+                        @media (max-width:576px) {
+                          .cabbooking {
+                            margin-left: 9%;
+                          }
+                        }
+                      </style>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="elite2" class="col-lg m-lg-4 mt-3 mb-5 text-start p-3  elite ps-3">
+            <img src="cameragrey_prev_ui.png" class="mb-5 mt-4 ms-3" alt="camera" height="50" width="60">
+            <h5 class="mb-4 ms-3">Camera Service</h5>
+            <p class="p-3" style="line-height: 2;">We offer cameras and drones for rent. Capture your awesome moments
+              with our rental camera.</p>
+            <button href=" " class="Readmore ms-3" type="submit" onclick="on1()">Book now<i
+                class="fa-solid fa-arrow-right ps-1"></i></button>
+          </div>
+          <!-- Camera booking -->
+          <div id="overlay1">
+            <div id="booking1">
+              <div class="container   ">
+                <i class="fa-solid fa-xmark" style="color:gray; float: right; font-size: 22px;" onclick="off1()"></i>
+                <style>
+                  i.fa-xmark:hover {
+                    cursor: pointer;
+                    color: rgb(247, 97, 97);
+                  }
+                </style>
+                <div id="errorAlert2" class="alert "
+                  style=" border:2px solid #efbeb7;
+              background-color: #efbeb7;
+              font-family: 'Poppins';
+              font-weight: 600;
+              height:5rem;
+              width:19rem;
+              padding-top: 1rem;
+              border-radius: 8px;
+              color:#a24025;position:fixed;top:10%;z-index: 1;float: right; right: 8%;display: none;transition: ease-in-out 6s;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);">
+                  <img class="me-2" src="warning.png" height="20" width="20"> Some error occured or form is incomplete.
+                </div>
+                <div id="bookingAlert2" class="alert "
+                  style=" border:2px solid #b7efc5;
+            background-color: #b7efc5;
+            font-family: 'Poppins';
+              font-weight: 600;
+            height:5rem;
+            width:19rem;
+            padding-top: 1rem;
+            border-radius: 8px;
+            color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: none; box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);"><img
+                    class="me-2" src="check.png" height="20" width="20"> Your booking placed successfully!</div>
+                <h5 class="text-center m-2 pt-5 mb-3" style="color:#FB8500; font-family: 'Poppins',sans-serif;">
+                  <b>Capture your memorable moments with our camera's!</b>
+                </h5>
+                <div class="row">
+                  <div class="col-lg-6 mx-auto ">
+                    <img class="img-fluid mt-5  mx-auto " src="Camera_prev_ui.png" height="90%" width="80%">
+                  </div>
+                  <div class="col-lg-6 text-start mt-5 pt-2  cabbooking">
+                    <form id="camBookingForm" class="mt-3">
+                      <div class="row  ps-3 ">
+                        <div class="col-lg-6 ps-3 ">
+                          <label style="color: grey;">Name</label>
+                          <input id="camname" class=" mb-3 pb-4 pt-2" type="text" id="name" placeholder="" name="name"
+                            required>
+                        </div>
+
+                        <div class="col-lg-6">
+                          <label style="color: grey;">Email</label>
+                          <input id="camnum" class="mb-3 pb-4 pt-2" type="email" placeholder="" name="number" required>
+                        </div>
+                      </div>
+                      <div class="row ps-3">
+                        <div class="col-lg-6 ">
+                          <label style="color: grey;">Model</label>
+                          <input id="cammodel" class=" mb-3 pb-4 pt-2" type="text" placeholder="" name="model" required>
+                        </div>
+                        <div class="col-lg-6">
+                          <label style="color:grey;">Lens</label>
+                          <input id="camlens" class="mb-3 pb-4 pt-2" type="text" placeholder="" name="lens" required>
+                        </div>
+                      </div>
+                      <div class="row ps-3 ">
+                        <div class="col-lg-6 ">
+                          <label style="color: grey;">Variant</label>
+                          <input id="camvariant" class=" mb-3 pb-4 pt-2" type="text" placeholder="" name="variant"
+                            required>
+                        </div>
+                        <div class="col-lg-6">
+                          <label style="color:grey;">Time</label>
+                          <input id="camtime" class="mb-1 pb-4 pt-2" type="text" placeholder="" name="time" required>
+                        </div>
+                      </div>
+                      <button class="booknow mt-2 ms-3 mb-3 me-5 " style="float:left; " type="submit"
+                        onclick="saveCam()">Book now</button>
+                      <style>
+                        .booknow {
+                          outline: none;
+                          background-color: #FB8500;
+                          color: white;
+                          border: 2px #FB8500 solid;
+                          height: 3rem;
+                          width: 20%;
+                          border-radius: 5px;
+                        }
+
+                        @media (max-width:510px) {
+                          .booknow {
+                            width: 50%;
+
+
+                          }
+                        }
+
+                        @media (max-width:576px) {
+                          .cabbooking {
+                            margin-left: 9%;
+                          }
+                        }
+                      </style>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Testimonial -->
+  <div class=" reviews service  text-center container-fluid pb-5" id="section3">
+    <div class="container mt-5 ps-5  pe-5 pt-5">
+      <h6 class="mb-5 mt-5 text-center" style="color:grey;font-family: 'Poppins',sans-serif;"><b>TESTIMONIAL</b></h6>
+      <h4 class="text-center" style="font-family: 'Poppins';"><b>Hear from our clients!</b></h4>
+      <div class="container-fluid-md">
+        <div class="row">
+          <div class="col-lg-6 mt-5 mx-auto">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Carousel indicators -->
+              <ol class="carousel-indicators ">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <!-- <li data-target="#myCarousel" data-slide-to="2"></li> -->
+              </ol>
+              <!-- Wrapper for carousel items -->
+              <div class="carousel-inner">
+                <div class="carousel-item active " style="font-family: 'Poppins',sans-serif;">
+                  <img src="Prose.png" alt="" height="100" width="135">
+                  <p class="testimonial text-center" style="font-size: medium; line-height: 1.6; font-weight: 500;"><i
+                      class="fa-solid fa-quote-left me-2"></i>I had an exceptional experience with BK Travels. Their
+                    attention to detail and personalized approach made my trip unforgettable. From the well-curated
+                    itinerary to the outstanding accommodations and knowledgeable guides, every aspect of my journey was
+                    seamlessly executed. I highly recommend BK Travels to fellow travelers seeking a truly exceptional
+                    travel experience.<i class="d-inline fa-solid fa-quote-right ms-2"></i></p>
+                  <p class="overview" style="line-height: 2; "><b style="font-size: large;">Proseper Martial</b>
+                    <br>Software Engineer
+                  </p>
+                  <span><i class="fa-solid fa-star rating"></i>
+                    <i class="fa-solid fa-star rating"></i>
+                    <i class="fa-solid fa-star rating"></i>
+                    <i class="fa-solid fa-star rating"></i>
+                    <i class="fa-solid fa-star rating"></i>
+                  </span>
+                </div>
+                <div class="carousel-item " style="font-family: 'Poppins',sans-serif;">
+                  <img src="rene-fotor-20230723134821.png" alt="" height="100" width="100">
+                  <p class="testimonial text-center" style="font-size: medium; line-height: 1.6; font-weight: 500;"><i
+                      class="fa-solid fa-quote-left me-2"></i>I can't thank BK Travels enough for the incredible trip
+                    they planned for me. The attention to detail, seamless logistics, and exceptional customer service
+                    made my vacation a dream come true. I highly recommend their services to anyone looking for a
+                    hassle-free and unforgettable travel experience.<i class="fa-solid fa-quote-right ms-2"></i></p>
+                  <p class="overview" style="line-height: 2; "><b style="font-size: large;">Marias Anton
+                      Rene</b><br>Student at TAC</p>
+                  <span><i class="fa-solid fa-star rating"></i>
+                    <i class="fa-solid fa-star rating"></i>
+                    <i class="fa-solid fa-star rating"></i>
+                    <i class="fa-solid fa-star rating"></i>
+                    <i class="fa-solid fa-star "></i>
+                  </span>
+                </div>
+              </div>
+              <!-- Carousel controls -->
+              <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+              </a>
+              <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="container mt-5" id="section4">
+    <div class="mt-5 ps-5  pe-5 pt-5">
+      <h6 class="mt-5 text-center mb-5" style="color:grey;font-family: 'Poppins',sans-serif;"><b>CONTACT US</b></h6>
+      <h5 class="text-center mt-5 mb-5" style="color:#FB8500; font-family: 'Poppins',sans-serif;"><b>Any queries or
+          remark? Just write us a message!</b></h5>
+
+      <div class="row mt-5 ">
+        <div class="col-lg-6 contactnav">
+          <h5 style="font-family: 'Poppins',sans-serif; color: white;" class="ps-4 mt-5 "><b>Contact Information</b>
+          </h5>
+          <p class="ps-4" style="color:white;">Say something to start live chat!</p>
+          <div class="pt-5 pb-5" style="margin-top: 15%;">
+            <span class=" mt-3"> <i class="fa-solid fa-phone-volume mt-lg-5 ms-lg-5 me-lg-4 "
+                style="font-size: larger;"></i>+91 7708994177</span><br>
+            <span><i class="fa-solid fa-envelope mt-lg-5 ms-lg-5 me-lg-4"
+                style="font-size: larger ;"></i>BKtravels01@gmail.com</span><br>
+            <span><i class="fa-solid fa-location-dot mt-lg-5 ms-lg-5 me-lg-4" style="font-size: larger;"></i>40/72, Sai
+              street, 9th cross, Lawspet, Puducherry-08.</span>
+            <span>
+              <p class="mt-2 " style="margin-left: 20%;"> </p>
+            </span>
+          </div>
+
+        </div>
+        <div id="contactform" class="col-lg-6  pt-5 contactform ">
+          <form>
+            <div class="row ms-3">
+              <div class="col-lg-6 ">
+                <label style="color: grey;">Name</label>
+                <input id="clientName" class=" mb-3 pb-4 pt-4" type="text" name="name">
+              </div>
+              <div class="col-lg-6">
+                <label style="color: grey;">Email</label>
+                <input id="email" class="mb-3 pb-4 pt-4" type="email" name="email">
+              </div>
+            </div>
+            <div class="row ms-3">
+              <div class="col-lg-6 ">
+                <select id="service" class=" mb-3  pb-5  pt-3 "
+                  style="color: grey; background-color: #ffff; border:none; border-radius: none; border-bottom:1px solid grey; font-family: 'Wix Madefor Display'; width: 75%;">
+                  <option selected style="font-family: 'Wix Madefor Display';" name="vehicle">Service Type</option>
+                  <option id="option" value="1">Tour</option>
+                  <option value="2">Room</option>
+                  <option value="3">Cab</option>
+                  <option value="3">Camera</option>
+                </select>
+              </div>
+              <div class="col-lg-6">
+                <label style="color:grey;">Mobile Number</label>
+                <input id="number" class="mb-3 pb-4 pt-4" type="text" name="number">
+              </div>
+            </div>
+            <label class="ms-4" style="color:grey;">Message</label>
+            <input id="msg" class="mb-3 p-2 ms-4" style="width:85%;" type="text" placeholder="" name="message">
+            <button class="submit mt-5  me-5 mb-5" style="float:right;" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- node mailer -->
+  <script>
+    const carForm = document.getElementById("carBookingForm");
+    const camForm = document.getElementById('camBookingForm');
+    const roomBooking = document.getElementById('roomBooking')
+    carForm.addEventListener('submit', (e) => {
+
+      e.preventDefault();
+      let formData = {
+        to: document.getElementById('cabnum').value,
+        name: document.getElementById('cabname').value,
+        service: "cab service",
+        time: document.getElementById('camtime').value
+
+      }
+
+      let xhr = new XMLHttpRequest();
+      xhr.open('POST', '/');
+      xhr.setRequestHeader('content-type', 'application/json');
+      xhr.onload = function () {
+        console.log(xhr.responseText);
+        if (xhr.responseText == "success") {
+          console.log("Email sent");
+        }
+      }
+      xhr.send(JSON.stringify(formData))
+
+    })
+    roomBooking.addEventListener('submit', (e) => {
+
+      e.preventDefault();
+      let formData = {
+        to: document.getElementById('anum').value,
+        name: document.getElementById('aname').value,
+        service : "Room service",
+        time:document.getElementById('aloc').value
+
+      }
+
+      let xhr = new XMLHttpRequest();
+      xhr.open('POST', '/');
+      xhr.setRequestHeader('content-type', 'application/json');
+      xhr.onload = function () {
+        console.log(xhr.responseText);
+        if (xhr.responseText == "success") {
+          console.log("Email sent");
+        }
+      }
+      xhr.send(JSON.stringify(formData))
+
+    })
+
+    camForm.addEventListener('submit', (e) => {
+
+      e.preventDefault();
+      let formData = {
+        to: document.getElementById('camnum').value,
+        name: document.getElementById('camname').value,
+        service: "Camera service",
+        time: document.getElementById('cabtime').value
+
+      }
+
+      let xhr = new XMLHttpRequest();
+      xhr.open('POST', '/');
+      xhr.setRequestHeader('content-type', 'application/json');
+      xhr.onload = function () {
+        console.log(xhr.responseText);
+        if (xhr.responseText == "success") {
+          console.log("Email sent");
+        }
+      }
+      xhr.send(JSON.stringify(formData))
+
+    })
+
+  </script>
+  <!-- Footer -->
+  <div class="h_line mt-4"></div>
+  <footer class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mb-3 p-3 ">
+          <a href="index.html"> <img class=" mb-3" src="favicon_prev_ui.png" onclick="index.html" height="70"
+              width="70"></a><br>
+          <a style="text-decoration: none; color:grey;line-height: 2.8; " class=""
+            href="mailto:BKtravels01@gmail.com">BKtravels01@gmail.com</a><br>
+          <p style="text-decoration: none; color:grey; ">+91 7708994177</p>
+        </div>
+        <div class="col-lg-2 mb-3 p-3">
+          <h6 class="mt-3" style="color: grey; ">Company</h6>
+          <a style="text-decoration: none; color:grey; line-height: 2.8;" href="index.html#section0">Who we are?</a><br>
+          <a style="text-decoration: none; color:grey;line-height: 2.8; " href="index.html#section1">What we do?</a><br>
+          <a style="text-decoration: none; color:grey; line-height: 2.8;" href="index.html#section3">Testimonial</a>
+        </div>
+        <div class="col-lg-2 mb-3 p-3">
+          <h6 class="mt-3" style="text-decoration: none;color:grey; ">Service</h6>
+          <a style="text-decoration: none; color:grey;line-height: 2.8; " class="" href="tour.html">Tour</a><br>
+          <a style="text-decoration: none; color:grey;line-height: 2.8; " href="fleet.html">Our Fleet</a><br>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="h_line" style="margin-top: 0%;"></div>
+  <div class="text-start container mt-4 mb-4">
+    <p style="color:grey;font-family: 'Wix Madefor Display'; font-size: medium; ">© 2023 <a href="index.html"
+        style="color:#FB8500;text-decoration: none;"> BK Travels.</a> All Rights Reserved.</p>
+  </div>
+
+  <!-- Firebase -->
+  <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+  <!-- Bootstrap cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+    integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
