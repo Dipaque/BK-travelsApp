@@ -21,10 +21,11 @@ body {
     outline: none;
     box-shadow: none;
 }
+
 .navbar .navlink .btn:focus,
-.navbar .navlink .btn:active{
-    outline:none;
-    box-shadow:none;
+.navbar .navlink .btn:active {
+    outline: none;
+    box-shadow: none;
 }
 
 .navicon {
@@ -35,34 +36,36 @@ body {
     color: #FB8500;
 }
 
-.toggleHolder{
+.toggleHolder {
     /* position: relative; */
     /* left:50%; */
     /* top:14.5rem; */
-    border:2px solid grey;
+    border: 2px solid grey;
     border-radius: 25px;
-    width:50px;
+    width: 50px;
     height: 10px;
-  }
-  .modeToggler{
-    border:2px solid grey;
+}
+
+.modeToggler {
+    border: 2px solid grey;
     text-align: center;
     color: grey;
     background-color: #ffff;
     border-radius: 50px;
-    height:30px;
-    width:30px;
-    position:absolute;
-    left:-2px;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: -2px;
     top: -12px;
     cursor: pointer;
-    transition:.5s ease-in;
-  }
-  .dark{
+    transition: .5s ease-in;
+}
+
+.dark {
     background-color: #0000;
-    color:#ffff;
+    color: #ffff;
     transition: .6s ease-in-out;
-  }
+}
 
 .home {
     font-family: 'Wix Madefor Display', sans-serif;
@@ -336,7 +339,7 @@ body {
     border-radius: 5px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
-    
+
 }
 
 @media (max-width:510px) {
@@ -618,9 +621,11 @@ input.empty {
     border-radius: 25px;
     text-align: center;
 }
-.imageslider{
+
+.imageslider {
     overflow-x: hidden;
 }
+
 .spot {
     height: 45vh;
     width: 18%;
@@ -633,23 +638,23 @@ input.empty {
 .loginPage {
     color: grey;
     font-family: 'Wix Madefor Display', sans-serif;
-  }
-  
-  .logininput {
+}
+
+.logininput {
     border: 2px solid grey;
     width: 60%;
     height: 3rem;
     padding-left: 20%;
     border-radius: 8px;
     margin-left: 20%;
-  }
-  
-  .logininput:focus {
+}
+
+.logininput:focus {
     outline: #FB8500;
     border: 2px solid #FB8500;
-  }
-  
-  .loginbtn {
+}
+
+.loginbtn {
     border: none;
     background-color: none;
     border: 1px solid #FB8500;
@@ -659,41 +664,57 @@ input.empty {
     height: 3rem;
     border-radius: 8px;
     margin-left: 20%;
-  }
-  
-  @media(max-width:576px) {
-    .logininput  {
-      margin-left: 10%;
-      width: 80%;
+}
+
+@media(max-width:576px) {
+    .logininput {
+        margin-left: 10%;
+        width: 80%;
     }
-  }
-  @media(max-width:576px) {
-    .loginbtn  {
-      margin-left: 10%;
-      width: 80%;
+}
+
+@media(max-width:576px) {
+    .loginbtn {
+        margin-left: 10%;
+        width: 80%;
     }
-  }
-  .loginbtn:hover{
+}
+
+.loginbtn:hover {
     background-color: #fc9c2e;
     border-color: #fc9c2e;
-  }
-  a.signUpLink{
+}
+
+a.signUpLink {
     text-decoration: none;
     color: grey;
-  }
-  a.signUpLink:hover {
+}
+
+a.signUpLink:hover {
     text-decoration: none;
-    color:#FB8500;
-  }
-  #message{
+    color: #FB8500;
+}
+
+#message {
     transition: ease-in;
-  }
-  .profile{
+}
+
+.profile {
     margin-left: 40%;
     margin-top: 5%;
-  }
-  @media (max-width:400px) {
-    .profile{
+}
+
+@media (max-width:400px) {
+    .profile {
         margin-left: 36%;
     }
-  }
+}
+
+.logout {
+    border: none;
+    background: none;
+    color: grey;
+}
+.logout:hover{
+    color: #FB8500;
+}

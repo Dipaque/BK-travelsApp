@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>BK travels</title>
   <link rel="stylesheet" href="BKtravels.css">
@@ -63,6 +62,7 @@
   <script src="../app.js"></script>
 
 
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Eczar:wght@800&family=Wix+Madefor+Display&display=swap');
   </style>
@@ -103,10 +103,11 @@
           <li class="nav-item text-center"><a class="nav-link  ps-4 pe-4" href="#section1">What we do?</a> </li>
           <li class="nav-item text-center "><a class="nav-link  ps-4 pe-4 " href="fleet.html">Our Fleet</a></li>
           <li class="nav-item text-center "><a class="nav-link  ps-4 pe-4" href="#section3">Testimonial</a></li>
+          <li  class="nav-item text-center "><a  class="nav-link  ps-4 pe-4" href="loginBk.html">Login</a></li>
           <li class="nav-item text-center "><button class="nav-link mx-auto contactlink p-2" type="button"
               onclick="location.href='#section4'"
               style="border-radius:5px; border:1px #FB8500 solid;background-color:#FB8500;color:#FFFF;">Contact
-              us</button></li>
+              us</button></li> 
         </ul>
       </div>
     </div>
@@ -136,6 +137,48 @@ padding-top: 1rem;
 border-radius: 8px;
 color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: none; box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);"><img class="me-2"
       src="check.png" height="20" width="20"> Thanks for contacting us!</div>
+
+<!-- Login -->
+<div id="loginPage" class="container mt-3 loginPage" style="display: none;">
+  <div class="row">
+    <div class="col-lg-6 d-none d-lg-block pt-5">
+      <img class="mt-5" src="login.jpg" alt="login" style="max-height: 100%; max-width: 100%;">
+    </div>
+    <div id="form" class="col-lg-6 px-auto p-4 ">
+      <h4 class="text-center mt-5" style="font-family: 'Poppins'; color: #fb8500;"><b>Welcome back!</b></h4>
+      <img class="profile" src="Loginprofile.jpg" height="90" width="90">
+      <input class="mt-5 logininput  ps-3" type="email" name="email" id="uemail" placeholder="Enter your Email">
+      <input class="mt-3 logininput  ps-3" type="password" name="password" id="upass" placeholder="Enter password">
+      <!-- <i class="fa-regular fa-eye" id="eyeToggle" style=" cursor: pointer;" ></i> -->
+      <button class="loginbtn mt-3" id="login" onclick=" login();reset()">Login</button>
+      <p class="text-center mt-3 mb-3">-or-</p>
+      <div class=" logininput   p-2 py-auto" style="cursor: pointer;" id="google-sign-in-button">
+        <svg class="ms-2 me-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 32 32" width="24" height="24">
+          <defs>
+            <path id="A"
+              d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z" />
+          </defs>
+          <clipPath id="B">
+            <use xlink:href="#A" />
+          </clipPath>
+          <g transform="matrix(.727273 0 0 .727273 -.954545 -1.45455)">
+            <path d="M0 37V11l17 13z" clip-path="url(#B)" fill="#fbbc05" />
+            <path d="M0 11l17 13 7-6.1L48 14V0H0z" clip-path="url(#B)" fill="#ea4335" />
+            <path d="M0 37l30-23 7.9 1L48 0v48H0z" clip-path="url(#B)" fill="#34a853" />
+            <path d="M48 48L17 24l-4-3 35-10z" clip-path="url(#B)" fill="#4285f4" />
+          </g>
+        </svg>
+        Sign in with Google
+      </div>
+      <p id="loginMessage" class="text-center mt-3 mb-3">Don't have an account? <a class="signUpLink"
+          href="signup.html"> Sign up now</a></p>
+    </div>
+  </div>
+</div>
+
+
+
   <!-- Home -->
   <div class="home  "
     style="background-image: url(summer-2880261_1280.jpg);background-position: center;background-size: cover;background-repeat: no-repeat;height: 46rem;">
@@ -234,6 +277,18 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
               color:#a24025;position:fixed;top:10%;z-index: 1;float: right; right: 8%;display: none;transition: ease-in-out 6s;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);">
                   <img class="me-2" src="warning.png" height="20" width="20"> Some error occured or form is incomplete.
                 </div>
+                <div id="login" class="alert "
+                  style=" border:5px solid #efbeb7;
+              background-color: #efbeb7;
+              font-family: 'Poppins';
+              font-weight: 600;
+              height:5rem;
+              width:19rem;
+              padding-top: 1rem;
+              border-radius: 8px;
+              color:#a24025;position:fixed;top:10%;z-index: 1;float: right; right: 8%;display: none;transition: ease-in-out 6s;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);">
+                  <img class="me-2" src="warning.png" height="20" width="20"> Please login to continue!
+                </div>
                 <div id="bookingAlert1" class="alert "
                   style=" border:2px solid #b7efc5;
                 font-family: 'Poppins';
@@ -266,22 +321,28 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
                       </div>
                       <div class="row ps-3">
                         <div class="col-lg-6 ">
-                          <label style="color: grey;">Room Count</label>
-                          <input id="atype" class=" mb-3 pb-4 pt-2" type="text" placeholder="" required>
+                          <select id="roomChoice" class=" mb-3  pb-5  "
+                            style="color: grey; background-color: #ffff; border:none; border-radius: none; border-bottom:1px solid grey; font-family: 'Wix Madefor Display'; width: 75%;">
+                            <option selected style="font-family: 'Wix Madefor Display';" name="vehicle">Hotel</option>
+                            <option id="option" value="1">Accord</option>
+                            <option value="2">Athithi</option>
+                            <option value="3">Shenbega</option>
+                            <option value="4">Raam International</option>
+                          </select>
                         </div>
                         <div class="col-lg-6">
-                          <label style="color:grey;">AC/Non AC</label>
+                          <label style="color:grey;">Rooms</label>
                           <input id="acac" class="mb-3 pb-4 pt-2" type="text" placeholder="" required>
                         </div>
                       </div>
                       <div class="row ps-3 ">
                         <div class="col-lg-6 ">
-                          <label style="color: grey;">Guest</label>
-                          <input id="aguest" class=" mb-3 pb-4 pt-2" type="text" placeholder="" required>
+                          <label style="color: grey;">Check in</label>
+                          <input id="aguest" class=" mb-3 pb-4 pt-2" type="datetime-local" placeholder="" required>
                         </div>
                         <div class="col-lg-6">
-                          <label style="color:grey;">Location</label>
-                          <input id="aloc" class="mb-1 pb-4 pt-2" type="text" placeholder="" required>
+                          <label style="color:grey;">Check out</label>
+                          <input id="aloc" class="mb-1 pb-4 pt-2" type="datetime-local" placeholder="" required>
                         </div>
                       </div>
                       <button id="" class="booknow mt-2 ms-3 mb-3 me-5 " style="float:left; " type="submit"
@@ -349,6 +410,19 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
               color:#a24025;position:fixed;top:10%;z-index: 1;float: right; right: 8%;display: none;transition: ease-in-out 6s;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);">
                   <img class="me-2" src="warning.png" height="20" width="20"> Some error occured or form is incomplete.
                 </div>
+                <div id="login1" class="alert "
+                  style=" border:5px solid #efbeb7;
+              background-color: #efbeb7;
+              font-family: 'Poppins';
+              font-weight: 600;
+              height:5rem;
+              width:19rem;
+              padding-top: 1rem;
+              border-radius: 8px;
+              color:#a24025;position:fixed;top:10%;z-index: 1;float: right; right: 8%;display: none;transition: ease-in-out 6s;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);">
+                  <img class="me-2" src="warning.png" height="20" width="20"> Please login to continue!
+                </div>
+
                 <div id="bookingAlert" class="alert "
                   style=" border:2px solid #b7efc5;
             background-color: #b7efc5;
@@ -382,12 +456,12 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
                       </div>
                       <div class="row ps-3">
                         <div class="col-lg-6 ">
-                          <label style="color: grey;">Departure</label>
+                          <label style="color: grey;">Pick up location</label>
                           <input id="cabdep" class=" mb-3 pb-4 pt-2" type="text" placeholder="" name="departure"
                             required>
                         </div>
                         <div class="col-lg-6">
-                          <label style="color:grey;">Destination</label>
+                          <label style="color:grey;">Drop location</label>
                           <input id="cabdes" class="mb-3 pb-4 pt-2" type="text" placeholder="" name="destination"
                             required>
                         </div>
@@ -480,6 +554,19 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
               color:#a24025;position:fixed;top:10%;z-index: 1;float: right; right: 8%;display: none;transition: ease-in-out 6s;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);">
                   <img class="me-2" src="warning.png" height="20" width="20"> Some error occured or form is incomplete.
                 </div>
+                <div id="login2" class="alert "
+                  style=" border:5px solid #efbeb7;
+              background-color: #efbeb7;
+              font-family: 'Poppins';
+              font-weight: 600;
+              height:5rem;
+              width:19rem;
+              padding-top: 1rem;
+              border-radius: 8px;
+              color:#a24025;position:fixed;top:10%;z-index: 1;float: right; right: 8%;display: none;transition: ease-in-out 6s;box-shadow:0px 8px 16px 0px rgba(0,0,0,0.19);">
+                  <img class="me-2" src="warning.png" height="20" width="20"> Please login to continue!
+                </div>
+
                 <div id="bookingAlert2" class="alert "
                   style=" border:2px solid #b7efc5;
             background-color: #b7efc5;
@@ -701,7 +788,8 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
   <script>
     const carForm = document.getElementById("carBookingForm");
     const camForm = document.getElementById('camBookingForm');
-    const roomBooking = document.getElementById('roomBooking')
+    const roomBooking = document.getElementById('roomBooking');
+    const contactform = document.getElementById('contactform')
     carForm.addEventListener('submit', (e) => {
 
       e.preventDefault();
@@ -709,7 +797,8 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
         to: document.getElementById('cabnum').value,
         name: document.getElementById('cabname').value,
         service: "cab service",
-        time: document.getElementById('camtime').value
+        time: document.getElementById('cabtime').value,
+        msg:`We are excited to inform you that your recent booking on BK-travels Vehicle service at ${document.getElementById('camtime').value} from ${document.getElementById('cabdep').value} to ${document.getElementById('cabdes').value} has been successfully processed and confirmed.Thank you for choosing us.`
 
       }
 
@@ -732,8 +821,8 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
         to: document.getElementById('anum').value,
         name: document.getElementById('aname').value,
         service : "Room service",
-        time:document.getElementById('aloc').value
-
+        time:document.getElementById('aloc').value,
+        msg:`We are excited to inform you that your recent booking on BK-travels Room service at ${document.getElementById('aloc').value}  has been successfully processed and confirmed.Thank you for choosing us.`
       }
 
       let xhr = new XMLHttpRequest();
@@ -756,7 +845,8 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
         to: document.getElementById('camnum').value,
         name: document.getElementById('camname').value,
         service: "Camera service",
-        time: document.getElementById('cabtime').value
+        time: document.getElementById('cabtime').value,
+        msg:"We are excited to inform you that your recent booking on BK-travels Camera service  has been successfully processed and confirmed.Thank you for choosing us."
 
       }
 
@@ -772,6 +862,32 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
       xhr.send(JSON.stringify(formData))
 
     })
+
+
+    contactform.addEventListener('submit', (e) => {
+
+e.preventDefault();
+let formData = {
+  to: document.getElementById('email').value,
+  name: document.getElementById('clientName').value,
+  service: "message",
+  time: document.getElementById('cabtime').value,
+  msg:"Your message has been sent successfully! we're here to help. Feel free to ask. Thanks for contacting us!"
+
+}
+
+let xhr = new XMLHttpRequest();
+xhr.open('POST', '/');
+xhr.setRequestHeader('content-type', 'application/json');
+xhr.onload = function () {
+  console.log(xhr.responseText);
+  if (xhr.responseText == "success") {
+    console.log("Email sent");
+  }
+}
+xhr.send(JSON.stringify(formData))
+
+})
 
   </script>
   <!-- Footer -->

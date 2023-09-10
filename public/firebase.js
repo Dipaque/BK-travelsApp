@@ -25,7 +25,7 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-console.log(document.getElementById('loginPage'));
+
 // reset
 reset = () => {
   document.getElementById('uemail').reset();
@@ -40,12 +40,13 @@ login = () => {
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function (userCredential) {
       // Login successful, access the user object
-      userLogin=true;
       var user = userCredential.user;
       document.getElementById('loginMessage').style.color = "green";
-      document.getElementById('loginMessage').innerHTML = "Logged in successfully!Go back to Home page";
+      document.getElementById('loginMessage').innerHTML = "Logged in successful!Go back to Home.";
       // .style.display='none';
-      console.log("Logged in user:", user.email);
+      console.log("Logged in user:", user.uid);
+      localStorage.setItem("id",user.uid);
+      // console.log(user);
       
     })
     .catch(function (error) {
@@ -114,7 +115,7 @@ signUp = () => {
         const user = userCredential.user;
         console.log('User registered:', user);
         document.getElementById('message').style.color = "green";
-        document.getElementById('message').innerHTML = "Account created successfully!";
+        document.getElementById('message').innerHTML = "Account created successful!Login back.";
       })
       .catch((error) => {
         // Handle registration error
@@ -133,6 +134,7 @@ const db = firebase.firestore();
 const rf4 = db.collection('Tour');
 // Store in db
 saveTour = () => {
+ 
   var data = {
     name: document.getElementById("tname").value,
     num: document.getElementById("tnum").value,
@@ -175,11 +177,11 @@ contactForm.addEventListener("submit", e => {
     number: document.getElementById("number").value,
     msg:document.getElementById('msg').value
   }
-  if(data.name==null || data.email==null || data.service=="Service Type" || data.number==null || data.msg==null){
+  if(data.name=="" || data.email=="" || data.service=="Service Type" || data.number=="" || data.msg==""){
     document.getElementById('errorBox').style.display='block';
     setTimeout(()=>document.getElementById('errorBox').style.display='none',3000);
   }
-  else if(data.number<999999999){
+  else if(data.number<=999999999 || data.number>9999999999){
     document.getElementById('errorBox').style.display='block';
     setTimeout(()=>document.getElementById('errorBox').style.display='none',3000);
   }
@@ -199,15 +201,17 @@ contactForm.addEventListener("submit", e => {
 const rf1 = db.collection('room');
 // Store in db
 save = () => {
+  const uid=localStorage.getItem("id");
   var data = {
     name: document.getElementById("aname").value,
     email: document.getElementById("anum").value,
-    guest: document.getElementById("aguest").value,
-    roomCount: document.getElementById("atype").value,
-    Ac: document.getElementById("acac").value,
-    location: document.getElementById("aloc").value
+    hotelName: document.getElementById("roomChoice").value,
+    roomCount: document.getElementById("aguest").value,
+    checkin: document.getElementById("acac").value,
+    checkout: document.getElementById("aloc").value
 
   }
+  if(uid!=null){
   if(data.name==''|| data.num ==''||data.guest==''|| data.roomCount==''|| data.Ac==''|| data.location==''){
     document.getElementById('errorAlert1').style.display='block';
     setTimeout(()=>document.getElementById('errorAlert1').style.display='none',3000);
@@ -224,15 +228,43 @@ save = () => {
       setTimeout(()=>document.getElementById('errorAlert1').style.display='none',3000);
     });
   }
- 
 }
-;
+else{
+  document.getElementById('login').style.display='block';
+  setTimeout(()=>document.getElementById('login').style.display='none',3000);
+}
+ 
+};
+       // Create a reference to a collection
+       const rf5 = db.collection('users');
+       // Store in db
+       saveUser = () =>  {
+         var data = {
+           name: document.getElementById("name").value,
+           email: document.getElementById("email").value,
+           pass: document.getElementById("pass").value
+         }
+         rf5.add(data).then(docRef => {
+           console.log('Document written with ID: ', docRef.id);
+         })
+           .catch(error => {
+             console.error('Error adding document: ', error);
+           });
+       };
+
+
+
+
+
+
+
 
 // Cab booking
 
 const rf2 = db.collection('Cab');
 // Store in db
 saveCab = () => {
+  const uid = localStorage.getItem('id');
   var data = {
     name: document.getElementById("cabname").value,
     num: document.getElementById("cabnum").value,
@@ -242,6 +274,7 @@ saveCab = () => {
     Time: document.getElementById("cabtime").value
 
   }
+  if(uid!=null){
   if(data.name==''|| data.num ==''||data.departure==''|| data.destination==''|| data.Vehicle==''|| data.Time==''){
     document.getElementById('errorAlert').style.display='block';
     setTimeout(()=>document.getElementById('errorAlert').style.display='none',3000);
@@ -258,6 +291,13 @@ saveCab = () => {
       setTimeout(()=>document.getElementById('errorAlert').style.display='none',3000);
     });
   }
+}
+else{
+  
+    document.getElementById('login1').style.display='block';
+    setTimeout(()=>document.getElementById('login1').style.display='none',3000);
+  
+}
 };
 
 // Camera Booking
@@ -265,6 +305,7 @@ saveCab = () => {
 const rf3 = db.collection('Camera');
 // Store in db
 saveCam = () => {
+  const uid=localStorage.getItem('id');
   var data = {
     name: document.getElementById("camname").value,
     email: document.getElementById("camnum").value,
@@ -274,6 +315,7 @@ saveCam = () => {
     Time: document.getElementById("camtime").value
 
   }
+  if(uid!=null){
   if(data.name==''|| data.num ==''||data.model==''|| data.variant==''|| data.lens==''|| data.Time==''){
     document.getElementById('errorAlert2').style.display='block';
     setTimeout(()=>document.getElementById('errorAlert2').style.display='none',3000);
@@ -290,6 +332,11 @@ saveCam = () => {
       setTimeout(()=>document.getElementById('errorAlert2').style.display='none',3000);
     });
   }
+}
+else{
+  document.getElementById('login2').style.display='block';
+  setTimeout(()=>document.getElementById('login2').style.display='none',3000);
+}
 };
 
 

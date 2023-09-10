@@ -22,10 +22,26 @@ const mailOptions = {
     from: "bktravels759@gmail.com",
     to: req.body.to,
     subject: "Booking Confirmation",
-    text: `Dear ${req.body.name},We are excited to inform you that your recent  booking on BK-travels ${req.body.service} at ${req.body.time} has been successfully processed and confirmed.Thank you for choosing us.`
+    text: `Dear ${req.body.name},${req.body.msg}`
 };
 
+const bookingMail={
+    from : "bktravels759@gmail.com",
+    to:"bktravels759@gmail.com",
+    subject:"New booking placed",
+    text:`name:${req.body.name},email:${req.body.to},service:${req.body.service}`
+}
+
 transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+        console.log("Error sending email:", error);
+        
+    } else {
+        console.log("Email sent:", info.response);
+    }
+});
+
+transporter.sendMail(bookingMail, (error, info) => {
     if (error) {
         console.log("Error sending email:", error);
         
