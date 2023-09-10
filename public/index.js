@@ -95,7 +95,8 @@ passwordVisible2 = () => {
 
   }
 }
-// document.getElementById('loginnav').addEventListener('click',()=>{})
+
+
 
 
 
