@@ -26,7 +26,7 @@ const mailOptions = {
 };
 
 const bookingMail={
-    from : req.body.to,
+    from : "bktravels759@gmail.com",
     to:"bktravels759@gmail.com",
     subject:"New booking placed",
     text:`name:${req.body.name},email:${req.body.to},service:${req.body.service}`
