@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>BK travels</title>
   <link rel="stylesheet" href="BKtravels.css">
@@ -107,12 +108,12 @@
           <li class="nav-item text-center "><button class="nav-link mx-auto contactlink p-2" type="button"
               onclick="location.href='#section4'"
               style="border-radius:5px; border:1px #FB8500 solid;background-color:#FB8500;color:#FFFF;">Contact
-              us</button></li> 
+              us</button></li>
         </ul>
       </div>
     </div>
   </nav>
-<!-- Login -->
+  <!-- Login -->
   <div class="container mt-3 loginPage">
     <div class="row">
       <div class="col-lg-6 d-none d-lg-block pt-5">
@@ -126,7 +127,8 @@
         <i class="fa-regular fa-eye" id="togglePassword" style=" cursor: pointer;"></i>
         <button class="loginbtn mt-3" id="login" onclick=" login();">Login</button>
         <p class="text-center mt-3 mb-3">-or-</p>
-        <div id="google-sign-in-button" class=" logininput   p-2 py-auto" style="cursor: pointer;" onclick="signInButton()">
+        <div id="google-sign-in-button" class=" logininput   p-2 py-auto" style="cursor: pointer;"
+          onclick="signInButton1()">
           <svg class="ms-2 me-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 32 32" width="24" height="24">
             <defs>
@@ -147,83 +149,91 @@
         </div>
         <p id="loginMessage" class="text-center mt-3 mb-3">Don't have an account? <a class="signUpLink"
             href="signup.html"> Sign up now</a></p>
-          <p id="logout" class="text-center"><button  class="logout mt-3 " onclick="logout()">Log out <i class="fa-solid fa-arrow-right-from-bracket"></i></button></p>
-            
+        <p id="logout" class="text-center"><button class="logout mt-3 " onclick="logout()">Log out <i
+              class="fa-solid fa-arrow-right-from-bracket"></i></button></p>
+
       </div>
     </div>
   </div>
   <script>
-  
+
     // Password visibility
-var eye=document.getElementById('togglePassword');
-var count=0;
-    countClick=()=>{
-      if(eye.onclick)
+    var eye = document.getElementById('togglePassword');
+    var count = 0;
+    countClick = () => {
+      if (eye.onclick)
         count++;
-    return count;
+      return count;
     }
 
-passwordVisible=()=>{
-  let count=countClick();
-  var passwordType=document.getElementById('upass');
-  if(count%2==1){
-  if(passwordType.type==="password"){
-    passwordType.type='text';
-    eye.className="fa-regular fa-eye-slash"
-  }
+    passwordVisible = () => {
+      let count = countClick();
+      var passwordType = document.getElementById('upass');
+      if (count % 2 == 1) {
+        if (passwordType.type === "password") {
+          passwordType.type = 'text';
+          eye.className = "fa-regular fa-eye-slash"
+        }
 
-  }
- else{
-    passwordType.type="password";
-    eye.className="fa-regular fa-eye"
-  }
-}
-eye.onclick=passwordVisible;
-
-
-
-// Attach an event listener to the sign-in button
-// 
-function signInButton  ()  {
-  const provider = new firebase.auth.GoogleAuthProvider();
-  // Start the sign-in process
-  firebase.auth().signInWithPopup(provider)
-    .then((result) => {
-      // User signed in successfully
-      const user = result.user;
-      console.log('Signed in user:', user);
-      console.log('uid',firebase.auth().currentUser.uid);
-      localStorage.setItem("id",firebase.auth().currentUser.uid)
-      window.location.assign("index.html");
-    })
-    .catch((error) => {
-      // Handle sign-in error
-      console.error('Error signing in:', error);
-    });
-};
+      }
+      else {
+        passwordType.type = "password";
+        eye.className = "fa-regular fa-eye"
+      }
+    }
+    eye.onclick = passwordVisible;
 
 
 
-function logout(){
-  const uid =localStorage.getItem("id");
-  if(uid==null){
-    document.getElementById('loginMessage').style.color = "red";
-  document.getElementById('loginMessage').innerText="No account logged in";
-  setTimeout(()=>{
-    document.getElementById('loginMessage').style.color = "grey";
-    document.getElementById('loginMessage').innerText="";
-     document.getElementById('loginMessage').innerHTML+='<p id="loginMessage" class="text-center mt-3 mb-3">Don\'t have an account? <a class="signUpLink" href="signup.html"> Sign up now</a></p>'},2000)
-  }
-  else{
-  localStorage.removeItem("id");
-  document.getElementById('loginMessage').style.color = "green";
-  document.getElementById('loginMessage').innerText="Logged out successful";
-  setTimeout(()=>{ 
-    document.getElementById('loginMessage').style.color = "grey";
-    document.getElementById('loginMessage').innerText="";
-    document.getElementById('loginMessage').innerHTML+='<p id="loginMessage" class="text-center mt-3 mb-3">Don\'t have an account? <a class="signUpLink" href="signup.html"> Sign up now</a></p>'},2000)
-  }
-}
+    // Attach an event listener to the sign-in button
+    // 
+    function signInButton1() {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      // Start the sign-in process
+      firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+          // User signed in successfully
+          const user = result.user;
+          console.log('Signed in user:', user);
+          console.log('current user:', firebase.auth().currentUser);
+        })
+        .catch((error) => {
+          // Handle sign-in error
+          document.getElementById('loginMessage').style.color = "red";
+          document.getElementById('loginMessage').innerText = error.message;
+          setTimeout(() => {
+            document.getElementById('loginMessage').style.color = "grey";
+            document.getElementById('loginMessage').innerText = "";
+            document.getElementById('loginMessage').innerHTML += '<p id="loginMessage" class="text-center mt-3 mb-3">Don\'t have an account? <a class="signUpLink" href="signup.html"> Sign up now</a></p>'
+          }, 5000)
+        });
+    }
+
+
+
+
+    function logout() {
+      const uid = localStorage.getItem("id");
+      if (uid == null) {
+        document.getElementById('loginMessage').style.color = "red";
+        document.getElementById('loginMessage').innerText = "No account logged in";
+        setTimeout(() => {
+          document.getElementById('loginMessage').style.color = "grey";
+          document.getElementById('loginMessage').innerText = "";
+          document.getElementById('loginMessage').innerHTML += '<p id="loginMessage" class="text-center mt-3 mb-3">Don\'t have an account? <a class="signUpLink" href="signup.html"> Sign up now</a></p>'
+        }, 2000)
+      }
+      else {
+        localStorage.removeItem("id");
+        document.getElementById('loginMessage').style.color = "green";
+        document.getElementById('loginMessage').innerText = "Logged out successful";
+        setTimeout(() => {
+          document.getElementById('loginMessage').style.color = "grey";
+          document.getElementById('loginMessage').innerText = "";
+          document.getElementById('loginMessage').innerHTML += '<p id="loginMessage" class="text-center mt-3 mb-3">Don\'t have an account? <a class="signUpLink" href="signup.html"> Sign up now</a></p>'
+        }, 2000)
+      }
+    }
 
   </script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"

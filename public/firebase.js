@@ -350,7 +350,7 @@ getData = () => {
     });
 }
 
-function signInButton  ()  {
+function signInButton2()  {
   const provider = new firebase.auth.GoogleAuthProvider();
   // Start the sign-in process
   firebase.auth().signInWithPopup(provider)
@@ -363,7 +363,12 @@ function signInButton  ()  {
     })
     .catch((error) => {
       // Handle sign-in error
-      console.error('Error signing in:', error);
+      document.getElementById('loginMessage').style.color = "red";
+  document.getElementById('loginMessage').innerText=error.message;
+  setTimeout(()=>{
+    document.getElementById('loginMessage').style.color = "grey";
+    document.getElementById('loginMessage').innerText="";
+     document.getElementById('loginMessage').innerHTML+='<p id="loginMessage" class="text-center mt-3 mb-3">Don\'t have an account? <a class="signUpLink" href="signup.html"> Sign up now</a></p>'},5000)
     });
 };
 
