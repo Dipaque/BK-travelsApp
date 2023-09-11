@@ -211,10 +211,14 @@ save = () => {
     roomCount: document.getElementById("aguest").value,
     checkin: document.getElementById("acac").value,
     checkout: document.getElementById("aloc").value
-
   }
-  if(uid!=null){
-  if(data.name==''|| data.num ==''||data.guest==''|| data.roomCount==''|| data.Ac==''|| data.location==''){
+  // console.log(document.getElementById('loginAlert'));
+if(uid==null){
+  document.getElementById('loginAlert').style.display='block';
+  setTimeout(()=>document.getElementById('loginAlert').style.display='none',3000);
+}
+else{
+  if(data.name==''|| data.email ==''||data.hotelName==''|| data.roomCount==''|| data.checkin==''|| data.checkout==''){
     document.getElementById('errorAlert1').style.display='block';
     setTimeout(()=>document.getElementById('errorAlert1').style.display='none',3000);
   }
@@ -230,10 +234,6 @@ save = () => {
       setTimeout(()=>document.getElementById('errorAlert1').style.display='none',3000);
     });
   }
-}
-else{
-  document.getElementById('login').style.display='block';
-  setTimeout(()=>document.getElementById('login').style.display='none',3000);
 }
  
 };
@@ -359,6 +359,7 @@ function signInButton  ()  {
       const user = result.user;
       console.log('Signed in user:', user);
       localStorage.setItem("id",firebase.auth().currentUser.uid)
+      window.location.assign("index.html");
     })
     .catch((error) => {
       // Handle sign-in error

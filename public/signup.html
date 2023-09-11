@@ -113,7 +113,7 @@
       </div>
     </div>
   </nav>
-  <div class="container mt-3 loginPage">
+  <div id="signUpForm" class="container mt-3 loginPage">
     <div class="row">
       <div class="col-lg-6 d-none d-lg-block">
         <img src="Sign up-rafiki.png" alt="signupimg" style="max-width: 100%;max-height: 100%; ">
@@ -122,13 +122,13 @@
         <h4 class="text-center mt-5" style="font-family: 'Poppins'; color: #fb8500;"> <b>Sign up</b> </h4>
         <input class="mt-5 logininput  ps-3" type="text" name="email" id="name" placeholder="Enter your name">
         <input class="mt-3 logininput  ps-3" type="email" name="email" id="email" placeholder="Enter your Email">
-        <input class="mt-3 logininput ps-3" type="password" name="password" id="pass" placeholder="Enter password">
-        <i class="fa-regular fa-eye" id="eyeToggle1" onclick="passwordVisible1()" ></i>
+      <span> <input class="mt-3 logininput ps-3" type="password" name="password" id="pass" placeholder="Enter password">
+        <i class="fa-regular fa-eye" id="eyeToggle1" onclick="passwordVisible1()" ></i></span> 
         <span> <input class="mt-3 logininput ps-3" type="password" name="password" id="repass"
             placeholder="Confirm password">
           <i class="fa-regular fa-eye" id="eyeToggle2" onclick="passwordVisible2()"></i></span>
 
-        <button class="loginbtn mt-3" onclick="signUp()">Sign up</button>
+        <button class="loginbtn mt-3" onclick="signUp()" type="submit">Sign up</button>
         <p class="text-center mt-3 mb-3">-or-</p>
         <div id="google-sign-in-button" class=" logininput   p-2 py-auto" style=" cursor: pointer;"
           onclick="signInButton()">
@@ -155,7 +155,33 @@
       </div>
     </div>
   </div>
-  </div>
+  
+<script>
+  const signup=document.getElementById('signUpForm');
+  signup.addEventListener('submit', (e) => {
+
+e.preventDefault();
+let formData = {
+  to: document.getElementById('email').value,
+  name: document.getElementById('name').value,
+  msg:"Thank you for registering on BK-travels.Your account has been created successful.You're rocking.Now you are ready to book our online services.We're waiting for your bookings!"
+
+}
+
+let xhr = new XMLHttpRequest();
+xhr.open('POST', '/');
+xhr.setRequestHeader('content-type', 'application/json');
+xhr.onload = function () {
+  console.log(xhr.responseText);
+  if (xhr.responseText == "success") {
+    console.log("Email sent");
+  }
+}
+xhr.send(JSON.stringify(formData))
+
+})
+</script>
+
   <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
