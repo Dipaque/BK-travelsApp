@@ -718,3 +718,23 @@ a.signUpLink:hover {
 .logout:hover{
     color: #FB8500;
 }
+.fa-regular {
+    position: absolute;
+    margin-top: -30px;
+    right: 160px;
+    cursor: pointer;
+  }
+  @media (max-width:988px) {
+    .fa-regular {
+      position: absolute;
+      right: 175px;
+    }
+  }
+
+  @media (max-width:576px) {
+    .fa-regular {
+      position: absolute;
+      right: 90px;
+    }
+  }
+ 

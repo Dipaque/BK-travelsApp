@@ -46,7 +46,8 @@ login = () => {
       // .style.display='none';
       console.log("Logged in user:", user.uid);
       localStorage.setItem("id",user.uid);
-      // console.log(user);
+      document.getElementById('uemail').value="";
+      document.getElementById('upass').value="";
       
     })
     .catch(function (error) {
@@ -116,6 +117,7 @@ signUp = () => {
         console.log('User registered:', user);
         document.getElementById('message').style.color = "green";
         document.getElementById('message').innerHTML = "Account created successful!Login back.";
+        setTimeout(()=>{window.location.assign("loginBk.html")},3000)
       })
       .catch((error) => {
         // Handle registration error
@@ -209,10 +211,14 @@ save = () => {
     roomCount: document.getElementById("aguest").value,
     checkin: document.getElementById("acac").value,
     checkout: document.getElementById("aloc").value
-
   }
-  if(uid!=null){
-  if(data.name==''|| data.num ==''||data.guest==''|| data.roomCount==''|| data.Ac==''|| data.location==''){
+  // console.log(document.getElementById('loginAlert'));
+if(uid==null){
+  document.getElementById('loginAlert').style.display='block';
+  setTimeout(()=>document.getElementById('loginAlert').style.display='none',3000);
+}
+else{
+  if(data.name==''|| data.email ==''||data.hotelName==''|| data.roomCount==''|| data.checkin==''|| data.checkout==''){
     document.getElementById('errorAlert1').style.display='block';
     setTimeout(()=>document.getElementById('errorAlert1').style.display='none',3000);
   }
@@ -228,10 +234,6 @@ save = () => {
       setTimeout(()=>document.getElementById('errorAlert1').style.display='none',3000);
     });
   }
-}
-else{
-  document.getElementById('login').style.display='block';
-  setTimeout(()=>document.getElementById('login').style.display='none',3000);
 }
  
 };
@@ -251,16 +253,7 @@ else{
              console.error('Error adding document: ', error);
            });
        };
-
-
-
-
-
-
-
-
 // Cab booking
-
 const rf2 = db.collection('Cab');
 // Store in db
 saveCab = () => {
@@ -296,7 +289,6 @@ else{
   
     document.getElementById('login1').style.display='block';
     setTimeout(()=>document.getElementById('login1').style.display='none',3000);
-  
 }
 };
 
@@ -358,24 +350,22 @@ getData = () => {
     });
 }
 
-const provider = new firebase.auth.GoogleAuthProvider();
-
-// Attach an event listener to the sign-in button
-const signInButton = document.getElementById('google-sign-in-button');
-signInButton.addEventListener('click', () => {
+function signInButton2()  {
+  const provider = new firebase.auth.GoogleAuthProvider();
   // Start the sign-in process
   firebase.auth().signInWithPopup(provider)
     .then((result) => {
       // User signed in successfully
       const user = result.user;
       console.log('Signed in user:', user);
-      console.log('current user:', firebase.auth().currentUser);
+      localStorage.setItem("id",firebase.auth().currentUser.uid)
+      window.location.assign("index.html");
     })
     .catch((error) => {
       // Handle sign-in error
       console.error('Error signing in:', error);
     });
-});
+};
 
 const docRef = db.collection('users').doc('userdetails');
 update = () => {
