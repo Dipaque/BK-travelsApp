@@ -195,7 +195,8 @@
           // User signed in successfully
           const user = result.user;
           console.log('Signed in user:', user);
-          console.log('current user:', firebase.auth().currentUser);
+          localStorage.setItem("id", firebase.auth().currentUser.uid)
+          window.location.assign("index.html");
         })
         .catch((error) => {
           // Handle sign-in error
