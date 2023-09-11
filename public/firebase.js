@@ -46,7 +46,8 @@ login = () => {
       // .style.display='none';
       console.log("Logged in user:", user.uid);
       localStorage.setItem("id",user.uid);
-      // console.log(user);
+      document.getElementById('uemail').value="";
+      document.getElementById('upass').value="";
       
     })
     .catch(function (error) {
@@ -116,6 +117,7 @@ signUp = () => {
         console.log('User registered:', user);
         document.getElementById('message').style.color = "green";
         document.getElementById('message').innerHTML = "Account created successful!Login back.";
+        setTimeout(()=>{window.location.assign("loginBk.html")},3000)
       })
       .catch((error) => {
         // Handle registration error
@@ -251,16 +253,7 @@ else{
              console.error('Error adding document: ', error);
            });
        };
-
-
-
-
-
-
-
-
 // Cab booking
-
 const rf2 = db.collection('Cab');
 // Store in db
 saveCab = () => {
@@ -296,7 +289,6 @@ else{
   
     document.getElementById('login1').style.display='block';
     setTimeout(()=>document.getElementById('login1').style.display='none',3000);
-  
 }
 };
 
@@ -358,24 +350,21 @@ getData = () => {
     });
 }
 
-const provider = new firebase.auth.GoogleAuthProvider();
-
-// Attach an event listener to the sign-in button
-const signInButton = document.getElementById('google-sign-in-button');
-signInButton.addEventListener('click', () => {
+function signInButton  ()  {
+  const provider = new firebase.auth.GoogleAuthProvider();
   // Start the sign-in process
   firebase.auth().signInWithPopup(provider)
     .then((result) => {
       // User signed in successfully
       const user = result.user;
       console.log('Signed in user:', user);
-      console.log('current user:', firebase.auth().currentUser);
+      localStorage.setItem("id",firebase.auth().currentUser.uid)
     })
     .catch((error) => {
       // Handle sign-in error
       console.error('Error signing in:', error);
     });
-});
+};
 
 const docRef = db.collection('users').doc('userdetails');
 update = () => {
