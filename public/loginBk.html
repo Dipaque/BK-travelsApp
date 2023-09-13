@@ -225,7 +225,11 @@
         }, 2000)
       }
       else {
+        
+        firebase.auth().signOut()
+      .then(() => {
         localStorage.removeItem("id");
+        console.log('User signed out successfully');
         document.getElementById('loginMessage').style.color = "green";
         document.getElementById('loginMessage').innerText = "Logged out successful";
         setTimeout(() => {
@@ -233,6 +237,18 @@
           document.getElementById('loginMessage').innerText = "";
           document.getElementById('loginMessage').innerHTML += '<p id="loginMessage" class="text-center mt-3 mb-3">Don\'t have an account? <a class="signUpLink" href="signup.html"> Sign up now</a></p>'
         }, 2000)
+      })
+      .catch((error) => {
+        // console.error('Error signing out:', error);
+        document.getElementById('loginMessage').style.color = "red";
+        document.getElementById('loginMessage').innerText = error.message;
+        setTimeout(() => {
+          document.getElementById('loginMessage').style.color = "grey";
+          document.getElementById('loginMessage').innerText = "";
+          document.getElementById('loginMessage').innerHTML += '<p id="loginMessage" class="text-center mt-3 mb-3">Don\'t have an account? <a class="signUpLink" href="signup.html"> Sign up now</a></p>'
+        }, 2000)
+      });
+        
       }
     }
 

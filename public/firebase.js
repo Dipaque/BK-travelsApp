@@ -363,12 +363,12 @@ function signInButton2()  {
     })
     .catch((error) => {
       // Handle sign-in error
-      document.getElementById('loginMessage').style.color = "red";
-  document.getElementById('loginMessage').innerText=error.message;
+      document.getElementById('message').style.color = "red";
+  document.getElementById('message').innerText=error.message;
   setTimeout(()=>{
-    document.getElementById('loginMessage').style.color = "grey";
-    document.getElementById('loginMessage').innerText="";
-     document.getElementById('loginMessage').innerHTML+='<p id="loginMessage" class="text-center mt-3 mb-3">Don\'t have an account? <a class="signUpLink" href="signup.html"> Sign up now</a></p>'},5000)
+    document.getElementById('message').style.color = "grey";
+    document.getElementById('message').innerText="";
+     document.getElementById('message').innerHTML+='<p id="message" class="text-center mt-3 mb-3">Already have an account? <a class="signUpLink" href="loginBk.html"> Log in now</a></p>'},5000)
     });
 };
 

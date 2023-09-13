@@ -36,8 +36,6 @@ function explore() {
   document.getElementById('locate').value = loc;
 }
 
-let tourName=document.getElementById("summa");
-console.log(tourName)
 
 var clickCount = 0;
 countClick = () => {
