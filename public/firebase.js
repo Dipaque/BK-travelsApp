@@ -31,7 +31,6 @@ reset = () => {
   document.getElementById('uemail').reset();
   document.getElementById('upass').reset();
 }
-var userLogin=false;
 // Login
 login = () => {
   var email = document.getElementById('uemail').value;
@@ -48,6 +47,8 @@ login = () => {
       localStorage.setItem("id",user.uid);
       document.getElementById('uemail').value="";
       document.getElementById('upass').value="";
+      window.location.assign("index.html");
+      
       
     })
     .catch(function (error) {

@@ -451,7 +451,7 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
 
                         <div class="col-lg-6">
                           <label style="color: grey;">Email</label>
-                          <input id="cabnum" class="mb-3 pb-4 pt-2" type="email" placeholder="" name="number" required>
+                          <input id="cabnum" class="mb-3 pb-4 pt-2" type="email" placeholder="" name="number"  required>
                         </div>
                       </div>
                       <div class="row ps-3">
@@ -485,8 +485,8 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
                           </select>
                         </div>
                         <div class="col-lg-6">
-                          <label style="color:grey;">Time</label>
-                          <input id="cabtime" class="mb-1 pb-4 pt-2" type="time" placeholder="" name="time" required>
+                          <label style="color:grey;">Date & Time</label>
+                          <input id="cabtime" class="mb-1 pb-4 pt-2" type="datetime-local" placeholder="" name="time" required>
                         </div>
                       </div>
                       <button id="cabButton" class="booknow mt-2 ms-3 mb-3 me-5 " style="float:left; " type="submit"
@@ -617,7 +617,7 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
                         </div>
                         <div class="col-lg-6">
                           <label style="color:grey;">Time</label>
-                          <input id="camtime" class="mb-1 pb-4 pt-2" type="text" placeholder="" name="time" required>
+                          <input id="camtime" class="mb-1 pb-4 pt-2" type="datetime-local" placeholder="" name="time" required>
                         </div>
                       </div>
                       <button class="booknow mt-2 ms-3 mb-3 me-5 " style="float:left; " type="submit"
@@ -798,7 +798,7 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
         name: document.getElementById('cabname').value,
         service: "cab service",
         time: document.getElementById('cabtime').value,
-        msg:`We are excited to inform you that your recent booking on BK-travels Vehicle service at ${document.getElementById('camtime').value} from ${document.getElementById('cabdep').value} to ${document.getElementById('cabdes').value} has been successfully processed and confirmed.Thank you for choosing us.`
+        msg:`We are excited to inform you that your recent booking on BK-travels Vehicle service at ${document.getElementById('camtime').value} from ${document.getElementById('cabdep').value} to ${document.getElementById('cabdes').value} has been successfully processed and confirmed.For cancel booking please mail us with valid reason before 5 hours of your booking.Thank you for choosing us.`
 
       }
 
@@ -822,7 +822,7 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
         name: document.getElementById('aname').value,
         service : "Room service",
         time:document.getElementById('aloc').value,
-        msg:`We are excited to inform you that your recent booking on BK-travels Room service at ${document.getElementById('aloc').value}  has been successfully processed and confirmed.Thank you for choosing us.`
+        msg:`We are excited to inform you that your recent booking on BK-travels Room service at ${document.getElementById('aloc').value}  has been successfully processed and confirmed.For cancel booking please mail us with valid reason before 5 hours of your booking.Thank you for choosing us.`
       }
 
       let xhr = new XMLHttpRequest();
@@ -846,7 +846,7 @@ color:#25a244;position:fixed;top:10%;z-index:1;float: right;right:8%;display: no
         name: document.getElementById('camname').value,
         service: "Camera service",
         time: document.getElementById('cabtime').value,
-        msg:"We are excited to inform you that your recent booking on BK-travels Camera service  has been successfully processed and confirmed.Thank you for choosing us."
+        msg:"We are excited to inform you that your recent booking on BK-travels Camera service  has been successfully processed and confirmed.For cancel booking please mail us with valid reason before 5 hours of your booking.Thank you for choosing us."
 
       }
 
